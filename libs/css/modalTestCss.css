@@ -1,0 +1,116 @@
+.modal {
+    left: 0;
+    top: 10;
+    width: 80%;; /* Full width */
+    height: 100%;
+    /*position: fixed;*/
+   /* overflow: hidden;*/
+    margin: auto;
+    
+}
+
+
+
+
+.modal-dialog{
+    
+   /* width: 80%;*/
+    
+     
+}
+.modal-contnent{
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    
+}
+
+.modal-body{
+
+    min-height:550px; 
+
+    max-height: calc(100vh - 210px);    
+    overflow-y:auto;
+
+
+}
+
+
+#modal-left {
+    float: left;
+    width: 20%;
+    background: whitesmoke;
+    
+    position: fixed;
+    /*padding: 30px;  */  
+    /*overflow-y: auto; */   
+}
+
+#modal-right {
+    float: right;
+    width: 80%;
+    background: white;
+    height: 100%;
+    /*position: relative;*/
+    min-height:100px; 
+   /* overflow-y: scroll;*/
+}
+
+#modal-left-s {
+    float: left;
+    width: 50%;
+    background: white;
+   
+}
+#modal-right-s {
+    float: right;
+    width: 50%;
+    background: white;
+    
+}
+
+#productLabel {
+font-size: 20px;
+text-align: center;
+display:block;
+margin-left: auto;
+margin-right: auto;
+}
+
+.productWidth {
+font-size: 20px;
+text-align: center;
+display:block;
+margin-left: auto;
+margin-right: auto;
+}
+
+#productHeight {
+font-size: 20px;
+text-align: center;
+display:block;
+margin-left: auto;
+margin-right: auto;
+}
+
+/*.row {
+    position: absolute;
+    margin: auto;
+
+
+}*/
+
+.column {
+    /*float: left;*/
+    /*width: 33.33%;*/
+    width: 50%;
+}
+
+/* Clear floats after the columns */
+/*.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}*/
