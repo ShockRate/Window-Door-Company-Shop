@@ -1,54 +1,7 @@
-<div class="row" style="text-align: center;">
-	
-	
-<!-- <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-    <div class="hovereffect">
-        <img class="img-responsive" src="images/series/8000.jpg" style="max-height: 100px; max-width: 100px ">
-        <div class="overlay">
-           <h2>EPAL 8000</h2>
-           <a class="info" href="index.php?nav=order&series=8000">New Order</a>
-        </div>
-    </div>
-</div>
-<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-    <div class="hovereffect">
-        <img class="img-responsive" src="images/series/14200.jpg" style="max-height: 100px; max-width: 100px ">
-        <div class="overlay">
-           <h2>EPAL 14200</h2>
-           <a class="info" href="index.php?nav=order&series=14200">New Order</a>
-        </div>
-    </div>
-</div>
-<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-    <div class="hovereffect">
-        <img class="img-responsive" src="images/series/14400.jpg" style="max-height: 100px; max-width: 100px ">
-        <div class="overlay">
-           <h2>EPAL 14400</h2>
-           <a class="info" href="index.php?nav=order&series=14400">New Order</a>
-        </div>
-    </div>
-</div>
-<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-    <div class="hovereffect">
-        <img class="img-responsive" src="images/series/14100.jpg" style="max-height: 100px; max-width: 100px ">
-        <div class="overlay">
-           <h2>EPAL 14100</h2>
-           <a class="info" href="index.php?nav=order&series=14100">New Order</a>
-        </div>
-    </div>
-</div>
-<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-    <div class="hovereffect">
-        <img class="img-responsive" src="images/series/18000.jpg" style="max-height: 100px; max-width: 100px ">
-        <div class="overlay">
-           <h2>EPAL 18000</h2>
-           <a class="info" href="index.php?nav=order&series=18000">New Order</a>
-        </div>
-    </div>
-</div>
-<br> -->
-  <div class="container" style="text-align: center;">
-    <div class="col-xs-6 col-lg-6" >
+<!-- <div class="row">	 -->
+   <div class="container" style="text-align: center; margin-left: auto; margin-right: auto; width: 50%">
+   <!--  <div class="col-xs-6 col-lg-6" > -->
+     
   <form method="post" action="index.php">
       <h3> <?php echo $series;?></h3>
       <div class="block">
@@ -82,5 +35,6 @@
       <br>
       <input type="submit" value="Δημιουργια Παραγγελειας" class="btn btn-primary" name="newOrder">
   </form>
+<!-- </div> -->
 </div>
-</div>
+<!-- </div> -->

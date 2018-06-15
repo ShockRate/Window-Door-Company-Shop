@@ -11,8 +11,14 @@
               <!-- <p id = "imgDetail"></p> --> 
               <div class="block">
                 <div>
-                  <img class="img-responsive" id="imgDetail" src="" style = "max-width: 236px; max-height: 236px;"> 
+                   <div id="dimensionsSet">
+                 
+                   </div>
+                   <button type="button" class="btn btn-danger" id="updateDimensions">
+                      ΕΝΗΜΕΡΩΣΗ ΔΙΑΣΤΑΣΕΩΝ
+                   </button>
                   <br>
+                  <?php //include_once 'views/testingHTML.php'; ?>
                 </div>   
                 <div class="block">
                   <label class="input-label">ΤΥΠΟΣ</label>

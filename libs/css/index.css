@@ -13,8 +13,7 @@
             div.center {
                  margin-bottom: 100px;
             }
-            table {
-                
+            table {                
                 width:80%;
                 margin: 0 auto;
             }
@@ -28,8 +27,8 @@
                 text-align: center;
             }
             th, td {
-                padding: 5px;
-                text-align: left;
+                padding: 1px;
+                text-align: center;
             }
             table#t01 tr:nth-child(even) {
                 background-color: #eee;
@@ -40,8 +39,10 @@
             table#t01 th {
                 background-color: black;
                 color: white;
+                text-align: center;
+                padding: auto, 5%;
             }
-
+             
             select {
                 width:250px; 
                 overflow:hidden; 
@@ -66,7 +67,7 @@
             }
             .formContent { 
                 margin-top: 20px; 
-                margin-left: 10px;
+                margin-left: 20px;
                 
             }
 
@@ -176,9 +177,4 @@
             }
 
             /* Style the tab content */
-            .tabcontent {
-                display: none;
-                padding: 6px 12px;
-                border: 1px solid #ccc;
-                border-top: none;
-            }           
+            

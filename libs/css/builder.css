@@ -1,14 +1,6 @@
-/**
- * Position icons into circle (SO)
- * http://stackoverflow.com/q/12813573/1397351 
- */
-/*MODAL*/
-.modal-button{
-	text-align: center;
-}
-.modal-body{
-	
-}
+/*CSS ΥΠΕΥΘΥΝΟ ΓΙΑ ΤΩΝ ΠΡΟΣΑΝΑΤΟΛΙΣΜΟ ΤΩΝ ΠΕΔΙΩΝ ΤΩΝ ΔΙΑΣΤΑΣΕΩΝ ΣΕ ΣΧΕΣΗ ΜΕ ΤΙΣ ΕΙΚΟΝΕΣ*/
+
+
 .builder-container{
 
 	position: relative;
@@ -17,6 +9,7 @@
 	display: inline-flex;
 
 	}
+
 .input-container{
 	display: flex;
 	vertical-align: middle;
@@ -70,6 +63,7 @@
 
 .builder-right {
 	margin-top: 15%;
+	/*margin-top: 20%;*/
 
 }
 .builder-right-empty {
@@ -84,3 +78,99 @@
 	margin-bottom: 10%;
 }
 
+/*CSS ΥΠΕΥΘΥΝΟ ΓΙΑ ΤΟΝ HTML ΚΩΔΙΚΑ ΠΟΥ ΕΜΦΑΝΙΖΕΙ ΕΙΚΟΝΑ ΤΗΣ ΚΑΤΑΣΚΕΥΗΣ ΚΑΙ ΤΩΝ ΔΙΑΣΤΑΣΕΩΝ ΣΤΟΝ ΠΙΝΑΚΑ*/
+.table-cell{
+	text-align: left;
+	margin: 5%;
+}
+.table-container{
+	position: relative;
+	text-align: center;
+	display: flex;
+	padding-left: 1%;
+	padding-right: 2%;
+
+	}
+
+.table-dim-top{
+	display: flex;
+	vertical-align: middle;
+	margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    text-align: center;
+
+    
+}
+
+.table-dim-top div{
+	width: auto;
+	display: flex;
+	margin-left: 5%;
+    margin-right: 5%;	
+   
+    display: block;
+}
+.table-dim-top span{
+	/*border: 1px solid black;*/
+	font-size: 6;
+
+}
+
+.table-dim-right {
+
+	margin-top: 15%;
+	
+	/*margin-top: 20%;*/
+
+}
+.table-dim-right span{
+
+	margin-top: 15%;
+	
+	background-color: yellow;
+
+}
+.table-dim-empty {
+	display: block;
+	margin-top: 15%;
+	padding-right: 25%;
+	
+
+}
+
+.table-dim div {
+	width: 30%;
+	display: flex;
+	margin-bottom: 10%;
+
+}
+
+.table-dim-top-left {
+	display: flex;
+	vertical-align: left;
+	margin-left: 0%;
+    margin-right: 5%;
+    width: 70%;
+}	
+.table-dim-top-left span {
+	width: 70%;
+	display: flex;
+	/*margin-left: 15%;*/
+    margin-right: 15%;	
+}
+
+.table-dim-top-right{
+	display: flex;
+	vertical-align: right;
+	margin-left: auto;
+    margin-right: 0%;
+    width: 70%;
+}	
+.table-dim-top-right span {
+	width: 85%;
+	display: flex;
+	margin-left: 15%;
+    margin-right: 15%;	
+   background-color: yellow;
+}

@@ -25,8 +25,8 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="libs/css/builder.css" rel="stylesheet" media="screen"> 
-   <!--  <link href="libs/css/index.css" rel="stylesheet" media="screen">  -->
-    <!-- <link href="libs/css/modalTestCss.css" rel="stylesheet" media="screen"> --> 
+    <link href="libs/css/index.css" rel="stylesheet" media="screen"> 
+    <link href="libs/css/modal.css" rel="stylesheet" media="screen"> 
 
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

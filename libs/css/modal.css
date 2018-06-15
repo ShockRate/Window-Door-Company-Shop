@@ -1,7 +1,7 @@
 .modal {
     left: 0;
     top: 10;
-    width: 80%;; /* Full width */
+    width: 80%; /* Full width */
     height: 100%;
     /*position: fixed;*/
    /* overflow: hidden;*/
@@ -13,9 +13,6 @@
 
 
 .modal-dialog{
-    
-    width: 80%;
-    
      
 }
 .modal-contnent{
@@ -60,18 +57,18 @@
 
 #modal-left-s {
     float: left;
-    width: 30%;
+    width: 50%;
     background: white;
    
 }
 #modal-right-s {
     float: right;
-    width: 70%;
+    width: 50%;
     background: white;
     
 }
 
-#productName {
+#productLabel {
 font-size: 20px;
 text-align: center;
 display:block;
@@ -95,12 +92,12 @@ margin-left: auto;
 margin-right: auto;
 }
 
-.row {
-    /*position: absolute;*/
+/*.row {
+    position: absolute;
     margin: auto;
 
 
-}
+}*/
 
 .column {
     /*float: left;*/
@@ -109,16 +106,8 @@ margin-right: auto;
 }
 
 /* Clear floats after the columns */
-.row:after {
+/*.row:after {
     content: "";
     display: table;
     clear: both;
-}
-
-/*.input-dim{
-    position: relative;
-    width: 20px;
 }*/
-input[type=number]{
-    width: 25px;
-}

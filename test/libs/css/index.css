@@ -71,57 +71,57 @@
             }
 
             
-
+/*
             .checkboxes {
                 columns: 4 8em;
             }
+*/
 
-
-            p.test {
+           /* p.test {
                 width: 9em; 
-                /*border: 1px solid #000000;*/
+                
                 word-wrap: break-word;
-            }
+            }*/
 
             
-            #hideDIV {
+           /* #hideDIV {
                     width: 100%;
                     padding: 50px 0;
                     text-align: center;
                     background-color: lightblue;
                     margin-top: 20px;
-                    /*display: none;*/
-                }
+                    
+                }*/
 
-            #my-row {
+            /*#my-row {
                 display: table;
-            }
+            }*/
 
-            #my-row .panel {
+           /* #my-row .panel {
                 float: none;
                 display: table-cell;
                 vertical-align: top;
-            }
+            }*/
 
-            .row-eq-height {
+            /*.row-eq-height {
               display: -webkit-box;
               display: -webkit-flex;
               display: -ms-flexbox;
               display:         flex;
-            }
+            }*/
 
-            .container {
+           /* .container {
               position: relative;
               
-            }
+            }*/
 
             
             
-            .vertical-center {
-                  /*min-height: 100%; 
+            /*.vertical-center {
+                  min-height: 100%; 
                   min-height: 100vh;    
                   display: flex;
-                  */
+                  
                     align-items: center;
 
                     position: absolute;
@@ -129,32 +129,32 @@
                     left: 50%;
                     transform: translate(-50%,-50%); 
                 }
-
-            .nospace {
+*/
+            /*.nospace {
                     font-size: 0;
                     display: block;
                     padding: 0;
                     margin: 0;
                     text-align: center;
-                }
-            .drawing{
+                }*/
+           /* .drawing{
                     padding: 0;
                     margin: 0;
                     max-height: 30%;
                     max-width: 30%;
-                }
+                }*/
 
                     
                     /*TABS */
                     /* Style the tab */
-            .tab {
+           /* .tab {
                 overflow: hidden;
                 border: 1px solid #ccc;
                 background-color: #f1f1f1;
-            }
+            }*/
 
             /* Style the buttons inside the tab */
-            .tab button {
+            /*.tab button {
                 background-color: inherit;
                 float: left;
                 border: none;
@@ -163,22 +163,22 @@
                 padding: 14px 16px;
                 transition: 0.3s;
                 font-size: 17px;
-            }
+            }*/
 
             /* Change background color of buttons on hover */
-            .tab button:hover {
+            /*.tab button:hover {
                 background-color: #ddd;
-            }
+            }*/
 
             /* Create an active/current tablink class */
-            .tab button.active {
+            /*.tab button.active {
                 background-color: #ccc;
-            }
+            }*/
 
             /* Style the tab content */
-            .tabcontent {
+            /*.tabcontent {
                 display: none;
                 padding: 6px 12px;
                 border: 1px solid #ccc;
                 border-top: none;
-            }           
+            }           */

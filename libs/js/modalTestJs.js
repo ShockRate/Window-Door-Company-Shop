@@ -3,7 +3,7 @@ $(document).ready(function(){
         var imgsrc = $(this).closest('tr').children()[6].getElementsByTagName("img")[0].getAttributeNode("src").value;
     
         alert(imgsrc+" "+ $(this).closest('tr').children()[2].textContent);
-        
+       
     });
 });
 
@@ -16,7 +16,7 @@ $('.myDetailsBtn').on('click',function(){
 
     var imgsrc = $(this).closest('tr').children()[6].getElementsByTagName("img")[0].getAttributeNode("src").value; 
     var index  = $(this).closest('tr').children()[0].textContent;
-    $("#myDetailsModal").modal("show");
+   
 
     $("#type").html($(this).closest('tr').children()[2].textContent);
     $("#pieces").val($(this).closest('tr').children()[3].textContent);
@@ -29,12 +29,11 @@ $('.myDetailsBtn').on('click',function(){
     $("#profiles").val($(this).closest('tr').children()[8].textContent);
     $("#shutters").val($(this).closest('tr').children()[9].textContent);
     $("#screens").val($(this).closest('tr').children()[10].textContent);
-    //$("#detailsNotes").val($(this).closest('tr').children()[12].textContent);
     $("textarea#detailsNotes").val($(this).closest('tr').children()[12].textContent);
 
      $.ajax({
         type: 'POST',
-        url: 'inc/getDimensions.php',
+        url: 'inc/getDetails.php',
         data: { windowIndex: index},
         success: function(response) {
             var result = $.parseJSON(response);
@@ -44,10 +43,11 @@ $('.myDetailsBtn').on('click',function(){
             $("#detailsClearWidth").val(result['clearwidth']);
             $("#detailsClearHeight").val(result['clearheight']);
             $("#series").val(result['clearheight']);
-            //$('#result1').html(response);
+            $('#dimensionsSet').html(result['setHtml']);
         }
     });
-
+   
+      $("#myDetailsModal").modal("show");
 });
 
 $('#updateOrder').click(function() {   
@@ -66,7 +66,7 @@ $('#updateOrder').click(function() {
             $('#result1').html(response);
         }
     });
- $('t01 tr:eq(val1) td:eq(5)').html($('#sillsImage').val());
+ $('t01 tr:eq(val0) td:eq(8)').val(val3);
 
 });   
 
@@ -129,9 +129,7 @@ $('.openSillsModal').on('click',function(){
     $("#inputUp").val($(this).closest('tr').prev().children()[1].textContent);
     $("#inputDown").val($(this).closest('tr').next().children()[1].textContent);
 
-    //Testing code
     
-     //end of testing code
 
     $('#windowsill').modal("show");
     

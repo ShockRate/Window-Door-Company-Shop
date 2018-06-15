@@ -87,21 +87,24 @@ $('#updateOrder').click(function() {
 // }
 function WhatToDo() {
    var rButtons = document.getElementsByName('productType');
-   var rType = document.getElementsByName('productTypeName');
+   var rType = document.getElementsByName('productRadioName');
+   var rProductClass = document.getElementsByName('productRadioClass');
    var rImageName = '';
    var rName = '';
+   var rClass = '';
     for (var i = 0; i < rButtons.length; i++) {
     if (rButtons[i].checked) { 
         // alert(rButtons[i].value);
 
         rImageName = rImageName.concat(rButtons[i].value);
         rName = rName.concat(rType[i].textContent);
+        rClass = rClass.concat(rProductClass[i].textContent);
     }
     //document.getElementById('productImage').src='images/'+ rImageName +'.jpg';
-    document.getElementById('productName').innerHTML= rName;
-    document.getElementById('productImage').setAttribute("src", 'images/'+ rImageName +'.jpg');
-    document.getElementById('productLabelName').setAttribute("value", rName);
-    //document.getElementById('productName').textContent = rImageName;
+    document.getElementById('productLabel').innerHTML= rName;
+    document.getElementById('productImage').setAttribute("src", '../images/'+ rImageName +'.jpg');
+    document.getElementById('productName').setAttribute("value", rName);
+    document.getElementById('productClass').setAttribute("value", rClass);
     }
     
 }

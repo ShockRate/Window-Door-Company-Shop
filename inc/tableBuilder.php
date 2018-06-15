@@ -1,0 +1,107 @@
+<?php
+class tableBuilder{
+	protected $message = "";
+
+	function __construct() {
+
+}
+
+	public function _printImg($type, $class, $dimLeft, $dimCenter, $dimRight, $dimUp, $dimMiddle){
+		$message = file_get_contents('./views/builder/idxDualAction.php');
+    $message = str_replace("_imgSrc", $type ,$message);
+    $message = str_replace("_dimLeft",(string)($dimLeft),$message);
+    $message = str_replace("_dimRight",(string)($dimRight),$message);
+    return $message;
+	}
+
+  public function printImg($type, $class, $width, $height){
+    if ($class == 2) {
+      # code...
+      $message = file_get_contents('./views/builder/idxDualAction.php');
+      $message = str_replace("_imgSrc", $type ,$message);
+      $message = str_replace("_halfWidth",(string)($width/2),$message);
+    } elseif ($class == 3) {
+      # code...
+      $message = file_get_contents('./views/builder/idxTripleAction.php');
+      $message = str_replace("_imgSrc", $type ,$message);
+      $message = str_replace("_halfWidth",(string)(round($width/3,1)),$message);
+    } elseif ($class == 4) {
+      # code...
+      $message = file_get_contents('./views/builder/idxSingleActionSingleFgg.php');
+      $message = str_replace("_imgSrc", $type ,$message);
+      $message = str_replace("_upHeight",(string)(round($height/5,1)),$message);
+      $message = str_replace("_downHeight",(string)(round(4*($height/5),1)),$message);
+    } elseif ($class == 5) {
+      # code...
+      $message = file_get_contents('./views/builder/idxDualActionDualFgg.php');
+      $message = str_replace("_imgSrc", $type ,$message);
+      $message = str_replace("_halfWidth",(string)($width/2),$message);
+      $message = str_replace("_upHeight",(string)(round($height/5,1)),$message);
+      $message = str_replace("_downHeight",(string)(round(4*($height/5),1)),$message);  
+    } elseif ($class == 6) {
+      # code...
+      $message = file_get_contents('./views/builder/idxDualActionSingleFgg.php');
+      $message = str_replace("_imgSrc", $type ,$message);
+      $message = str_replace("_halfWidth",(string)($width/2),$message);
+      $message = str_replace("_upHeight",(string)(round($height/5,1)),$message);
+      $message = str_replace("_downHeight",(string)(round(4*($height/5),1)),$message);
+    } elseif ($class == 7) {
+      # code...
+      $message = file_get_contents('./views/builder/idxDualActionDualFgg.php');
+      $message = str_replace("_imgSrc", $type ,$message);
+      $message = str_replace("_halfWidth",(string)($width/2),$message);
+      $message = str_replace("_upHeight",(string)(round($height/5,1)),$message);
+      $message = str_replace("_downHeight",(string)(round(4*($height/5),1)),$message);  
+     } elseif ($class == 8) {
+      # code...
+      $message = file_get_contents('./views/builder/idxTripleActionSingleFgg.php');
+      $message = str_replace("_imgSrc", $type ,$message);
+      $message = str_replace("_halfWidth",(string)(round($width/3,1)),$message);
+      $message = str_replace("_upHeight",(string)(round($height/5,1)),$message);
+      $message = str_replace("_downHeight",(string)(round(4*($height/5),1)),$message);
+     } elseif ($class == 9) {
+      # code...
+      $message = file_get_contents('./views/builder/idxTripleActionTripleFgg.php');
+      $message = str_replace("_imgSrc", $type ,$message);
+      $message = str_replace("_halfWidth",(string)(round($width/3,1)),$message);
+      $message = str_replace("_upHeight",(string)(round($height/5,1)),$message);
+      $message = str_replace("_downHeight",(string)(round(4*($height/5),1)),$message);
+     } elseif ($class == 11) {
+      # code...
+      $message = file_get_contents('./views/builder/idxFixEntr.php');
+      $message = str_replace("_imgSrc", $type ,$message);
+      $message = str_replace("_halfWidth",(string)(round($width/2,1)),$message);    
+     } elseif ($class == 12) {
+      # code...
+      $message = file_get_contents('./views/builder/idxEntrFix.php');
+      $message = str_replace("_imgSrc", $type ,$message);
+      $message = str_replace("_halfWidth",(string)(round($width/2,1)),$message);
+     } elseif ($class == 13) {
+      # code...
+      $message = file_get_contents('./views/builder/idxFixEntrFix.php');
+      $message = str_replace("_imgSrc", $type ,$message);
+      $message = str_replace("_halfWidth",(string)(round($width/3,1)),$message);
+     } elseif ($class == 14) {
+      # code...
+      $message = file_get_contents('./views/builder/idxFixEntrFixFgg.php');
+      $message = str_replace("_imgSrc", $type ,$message);
+      $message = str_replace("_halfWidth",(string)(round($width/3,1)),$message);
+      $message = str_replace("_upHeight",(string)(round($height/5,1)),$message);
+      $message = str_replace("_downHeight",(string)(round(4*($height/5),1)),$message);   
+     } elseif ($class == 15) {
+      # code...
+      $message = file_get_contents('./views/builder/idxQuadrableAction.php');
+      $message = str_replace("_imgSrc", $type ,$message);
+      $message = str_replace("_halfWidth",(string)(round($width/4,1)),$message);
+    } else {
+      $message = file_get_contents('./views/builder/idxSingleAction.php');
+      $message = str_replace("_imgSrc", $type ,$message);
+    }
+
+    
+            return $message;
+  }
+}
+
+?>
+

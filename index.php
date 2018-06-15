@@ -6,10 +6,12 @@
     require 'window.php';
 
     include_once $_SERVER['DOCUMENT_ROOT'].'/test-shop/inc/check.php';
-    //include_once '../inc/phpmailer.php';
+
     include_once $_SERVER['DOCUMENT_ROOT'].'/test-shop/inc/copyRows.php';
 
     include_once $_SERVER['DOCUMENT_ROOT'].'/test-shop/config.php';
+
+    include_once $_SERVER['DOCUMENT_ROOT'].'/test-shop/inc/tableBuilder.php';
 
     use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
     use PhpOffice\PhpSpreadsheet\Cell\Cell;
@@ -26,6 +28,7 @@
         $CopyRows       = new copyRows;
         $reader         = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
         $order          = new order;
+       
 
 
   /** ===========================================================================================
@@ -128,6 +131,7 @@ if (isset($newItem)) {
                      "ID"           => $item->getId(),
                      "Type"         => $_POST['productType'],
                      "Name"         => $_POST['productName'],
+                     "Class"        => $_POST['productClass'],
                      "Width"        => $item->getWidth(),
                      "Height"       => $item->getHeight(),
                      "ClearWidth"   => $item->getWidth()-5,
@@ -136,15 +140,20 @@ if (isset($newItem)) {
                      "Profile"      => "",
                      "Shutters"     => "",
                      "Screens"      => "",
-                     "DetailsNotes" => "Anything else goes here",
+                     "DetailsNotes" => "Λεπτομέρειες",
                      "SillUp"       => "2.5",
                      "SillDown"     => "2.5",
                      "SillLeft"     => "2.5",
                      "SillRight"    => "2.5",
                      "Pieces"       => "1",
                      "Color"        =>  $_SESSION['order']['Color'],
-                     "Glazzing"      =>  $_SESSION['order']['GLazzing'],
-                     "Series"        =>  $_SESSION['order']['Series'],
+                     "Glazzing"     =>  $_SESSION['order']['GLazzing'],
+                     "Series"       =>  $_SESSION['order']['Series'],
+                     "DimLeft"      => "100",
+                     "DimCenter"    => "",
+                     "DimRight"     => "200",
+                     "DimUp"        => "",
+                     "DimMiddle"    => ""
 
 
                     
@@ -181,6 +190,7 @@ if (isset($newItem)) {
     <link href="libs/css/builder.css" rel="stylesheet" media="screen"> 
     <link href="libs/css/index.css" rel="stylesheet" media="screen"> 
     <link href="libs/css/modalTestCss.css" rel="stylesheet" media="screen"> 
+    <!-- <link href="libs/css/modal.css" rel="stylesheet" media="screen"> --> 
     
    
 
@@ -203,22 +213,23 @@ if (isset($newItem)) {
         if (isset($_SESSION['order']) && !empty($_SESSION['order'])){
             
             include_once 'views/testingHTML.php';
+            //include_once 'views/designModal.php';
             include_once 'views/V2designModal.php';
             include_once 'views/detailsModal.php';
             include_once 'views/designOrderDetails.php';
             include_once 'views/designTable.php';
-            include_once 'views/windowsill.php'; 
-           
+            include_once 'views/windowsill.php';          
         } else {
             include_once 'views/seriesViews.php'; 
 
         }
  
   ?> 
+  <br>
   <div style="text-align: center;">
                     <button type="button" class="btn btn-warning" id="clearTable">CLEAR THE ORDER</button>
     </div>
-<br>
+    <br>
      <form method="post" action="inc/download.php">
         <div style="text-align: center;">
              <input type="submit" value="Download Excel" class="btn btn-primary" name="download">

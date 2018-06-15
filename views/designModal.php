@@ -9,7 +9,7 @@
 
 <!-- bs-example-modal-sm -->
 <div class="modal fade" tabindex="-1" id="designModal">
-  <<!-- div class="modal-dialog"> -->
+  <!-- <div class="modal-dialog"> -->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
@@ -31,9 +31,9 @@
            <!--  <div id="modal-left"> -->
             <div style="position: fixed;" >
             <img id="productImage" src="images/2P-DA-L.jpg" style = "max-width: 236px; max-height: 236px;">
-            <span id="productName" name ="productName"></span>
-            <input type="hidden" name="productLabelName" id="productLabelName">
-            <p><input type="text" id="metrics" name="metrics"></p>
+            <span id="productLabel" name ="productLabel"></span>
+            <input type="hidden" name="productName" id="productName">
+            <input type="hidden" name="productClass" id="productClass">
              
             <div class="formContent">
                 <div id="tab-meters" class="tabcontent">
@@ -81,6 +81,7 @@
            
             
             <div class="col-xs-9 col-lg-9" >
+              <div class="modal-right" style="margin-left: 10%">
             <ul class="nav nav-tabs" role="tablist">
               <li class="nav-item">
                 <a class="nav-link active" data-toggle="tab" href="#windows">Windows</a>
@@ -99,14 +100,18 @@
                   <div class="panel-body">
                     <?php for ($row = 3; $row <= 17; ++ $row) { 
                       $vartype =$typesWorksheet->getCellByColumnAndRow('2',"$row")->getValue();
+                      $varclass=$typesWorksheet->getCellByColumnAndRow('3',"$row")->getValue();
                       $varname =$typesWorksheet->getCellByColumnAndRow('1',"$row")->getValue(); ?>
                       <label class="checkbox-inline">
                       <img src='images/<?php echo $vartype;?>.jpg' width="85" height="94" alt="<?php echo $varname;?>"/>
                       <br>
                       <input type="radio" name="productType" id="contype" onchange="WhatToDo()" value="<?php echo $vartype;?>" required <?php echo $Check->RadioChecked($type, $varname) ?>>
-                      <p class="test" name="productTypeName"> 
+                      <p class="test" name="productRadioName"> 
                             <?php echo $varname;?> 
-                      </p>        
+                      </p>
+                      <p class="hidden" name="productRadioClass"> 
+                            <?php echo $varclass;?> 
+                      </p>              
                       </label>
                           <?php }?>
                   </div> <!-- panel-body fbody -->
@@ -116,14 +121,18 @@
                   <div class="panel-body">
                     <?php for ($row = 18;$row <=  33; ++ $row) { 
                       $vartype =$typesWorksheet->getCellByColumnAndRow('2',"$row")->getValue();
+                      $varclass=$typesWorksheet->getCellByColumnAndRow('3',"$row")->getValue();
                       $varname =$typesWorksheet->getCellByColumnAndRow('1',"$row")->getValue(); ?>
                       <label class="checkbox-inline">
                       <img src='images/<?php echo $vartype;?>.jpg' width="85" height="94" alt="<?php echo $varname;?>"/>
                       <br>
                       <input type="radio" name="productType" id="contype" onchange="WhatToDo()" value="<?php echo $vartype;?>" required <?php echo $Check->RadioChecked($type, $varname) ?>>
-                      <p class="test" name="productTypeName"> 
+                      <p class="test" name="productRadioName"> 
                             <?php echo $varname;?> 
-                      </p>        
+                      </p>  
+                      <p class="hidden" name="productRadioClass"> 
+                            <?php echo $varclass;?> 
+                      </p>         
                       </label>
                           <?php }?>
                   </div> <!-- panel-body fbody -->
@@ -131,16 +140,20 @@
                 <div id="doors" class="tab-pane fade"><br>
                   <h3>Doors</h3>
                   <div class="panel-body">
-                    <?php for ($row = 29;$row <=  $worksheet->getHighestRow('D'); ++ $row) { 
+                    <?php for ($row = 34;$row <= $typesWorksheet->getHighestRow('B'); ++ $row) { 
                       $vartype =$typesWorksheet->getCellByColumnAndRow('2',"$row")->getValue();
+                      $varclass=$typesWorksheet->getCellByColumnAndRow('3',"$row")->getValue();
                       $varname =$typesWorksheet->getCellByColumnAndRow('1',"$row")->getValue(); ?>
                       <label class="checkbox-inline">
                       <img src='images/<?php echo $vartype;?>.jpg' width="85" height="94" alt="<?php echo $varname;?>"/>
                       <br>
                       <input type="radio" name="productType" id="contype" onchange="WhatToDo()" value="<?php echo $vartype;?>" required <?php echo $Check->RadioChecked($type, $varname) ?>>
-                      <p class="test" name="productTypeName"> 
+                      <p class="test" name="productRadioName"> 
                             <?php echo $varname;?> 
-                      </p>        
+                      </p>  
+                      <p class="hidden" name="productRadioClass"> 
+                            <?php echo $varclass;?> 
+                      </p>         
                       </label>
                           <?php }?>
                   </div> <!-- panel-body fbody -->
@@ -148,7 +161,7 @@
                 
               </div>
             <!-- <div id="modal-right"> -->
-            
+            </div>
             </div> <!-- modal-right or col-md-6-->
             </div> <!-- row -->
          <!--  </div> --> <!-- container -->
@@ -161,7 +174,7 @@
             <button type="button" class="btn btn-primary">Save changes</button>
           </div>
       </div> <!-- modal-content -->
- <!--  </div> --> <!-- modal-dialog -->
+  <!-- </div> --> <!-- modal-dialog -->
 </div> <!-- modal fade -->
 <br>
 <!-- 

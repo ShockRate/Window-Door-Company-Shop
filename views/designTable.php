@@ -1,5 +1,6 @@
 <?php  $i = 1;
 echo $series;
+ $tableBuilder   = new tableBuilder;
 ?>
 
 				<div class="main" class="row">
@@ -15,10 +16,10 @@ echo $series;
 				    <th>Καθαρά Μέτρα</th> 
 				    <th>Ψευτόκασα</th>
 				    <th>Παντζούρι/Σϊτα</th>
-				    <th style="width: 520px">Ρόλο/Σϊτα</th>
+				    <th>Ρόλο/Σϊτα</th>
 				    <th>Καϊτια</th>
 				    <th>Παρατηρησεις</th>   
-				    <!-- <th></th>  -->
+				    <th></th> 
 				  </tr>
 
 				  <?php 
@@ -32,15 +33,19 @@ echo $series;
 				    <td><?php echo $arr['Name'];?></td>
 				    <td><?php echo $arr['Pieces'];?></td>
 				    <td><?php echo $arr['Width'].'/<br>'.$arr['Height'];?></td>
-				    <td><?php include 'views/sills.php';?><!-- <img src="<?php //echo $arr['Sills'];?>" width="85" height="94" class="openSillsModal"> --></td>
-				    <td><img src="images/<?php echo $arr['Type'];?>.jpg" width="128" height="141" class="img-product"></td>
-				    <td><?php echo ($arr['Width'] - $arr['SillLeft'] - $arr['SillRight']).'/<br>'.($arr['Height'] - $arr['SillUp'] - $arr['SillDown']);?></td></td>
+				    <td><?php include 'views/sills.php';?></td>
+				  
+				    <td class="table-cell"><?php //include 'views/builder/idxDualAction.php';
+				    			echo $tableBuilder->printImg($arr['Type'],$arr['Class'],$arr['Width'],$arr['Height']);
+				    			//echo $tableBuilder->_printImg($arr['Type'],$arr['Class'],$arr['DimLeft'],$arr['DimCenter'],$arr['DimRight'],$arr['DimUp'],$arr['DimMiddle']);
+				    			?></td>
+				    <td><?php echo ($arr['Width'] - $arr['SillLeft'] - $arr['SillRight']).'/<br>'.($arr['Height'] - $arr['SillUp'] - $arr['SillDown']);?></td>
 				    <td><?php echo $arr['Profile'];?></td>
 				    <td><?php echo $arr['Shutters'];?></td>
 				    <td><?php echo $arr['Screens'];?></td>
 				    <td></td>
 				    <td><?php echo $arr['DetailsNotes'];?></td>
-				    <td> <div style="text-align: center;">
+				    <td><div style="text-align: center;">
   						<button class="btn myDetailsBtn">ΛΕΠΤΟΜΕΡΙΕΣ</button>
 						</div>
 					</td>

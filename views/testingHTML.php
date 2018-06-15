@@ -16,5 +16,6 @@
       include_once 'views/builder/bldFixEntrFix.php';
       include_once 'views/builder/bldFixEntrFixFgg.php';
       
+            
     ?>
 </div>
