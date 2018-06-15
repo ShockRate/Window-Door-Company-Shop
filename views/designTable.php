@@ -36,8 +36,8 @@ echo $series;
 				    <td><?php include 'views/sills.php';?></td>
 				  
 				    <td class="table-cell"><?php //include 'views/builder/idxDualAction.php';
-				    			echo $tableBuilder->printImg($arr['Type'],$arr['Class'],$arr['Width'],$arr['Height']);
-				    			//echo $tableBuilder->_printImg($arr['Type'],$arr['Class'],$arr['DimLeft'],$arr['DimCenter'],$arr['DimRight'],$arr['DimUp'],$arr['DimMiddle']);
+				    			//echo $tableBuilder->printImg($arr['Type'],$arr['Class'],$arr['Width'],$arr['Height']);
+				    			echo $tableBuilder->_printImg($arr['Type'],$arr['Class'],$arr['DimLeft'],$arr['DimCenter'],$arr['DimRight'],$arr['DimUp'],$arr['DimMiddle'],$arr['DimCentLeft'],$arr['DimCentRight']);
 				    			?></td>
 				    <td><?php echo ($arr['Width'] - $arr['SillLeft'] - $arr['SillRight']).'/<br>'.($arr['Height'] - $arr['SillUp'] - $arr['SillDown']);?></td>
 				    <td><?php echo $arr['Profile'];?></td>

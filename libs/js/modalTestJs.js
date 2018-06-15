@@ -50,6 +50,34 @@ $('.myDetailsBtn').on('click',function(){
       $("#myDetailsModal").modal("show");
 });
 
+// $('#updateDimensions').click(function() {
+
+
+// });
+
+function updateDimensions(){
+    var valindex = document.getElementById("windowIndex").value;
+    var valdimCenter = document.getElementsByName("dimCenter").value;
+    var valdimRight = document.getElementsByName('dimRight');
+    var valdimLeft = document.getElementsByName('dimLeft');
+    var valdimUp = document.getElementsByName('dimUp');
+    var valdimMiddle = document.getElementsByName('dimMiddle');
+    var valdimCentRight = document.getElementsByName('dimCentRight');
+    var valdimCentLeft = document.getElementsByName('dimCentLeft');
+
+    document.getElementById("result1").innerHTML = valindex;
+
+    $.ajax({
+        type: 'POST',
+        url: 'inc/updateDimensions.php',
+        data: { index: valindex, dimCenter: valdimCenter, dimLeft: valdimLeft, dimRight: valdimRight, 
+            dimUp: valdimUp, dimMiddle: valdimMiddle, dimCentRight: valdimCentRight, dimCentLeft: valdimCentLeft},
+        success: function(response) {
+            //$('#result1').html(response);
+        }
+    });
+}
+
 $('#updateOrder').click(function() {   
     var val0 = $('#windowIndex').val();
     var val1 = $('#shutters').val();

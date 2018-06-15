@@ -14,4 +14,7 @@
 	$_SESSION['Cart'][$windowIndex]['DetailsNotes'] 	= $detailsNotes;
 	$_SESSION['Cart'][$windowIndex]['Pieces'] 			= $pieces;
 
+
+	
+
 ?>

@@ -149,11 +149,13 @@ if (isset($newItem)) {
                      "Color"        =>  $_SESSION['order']['Color'],
                      "Glazzing"     =>  $_SESSION['order']['GLazzing'],
                      "Series"       =>  $_SESSION['order']['Series'],
-                     "DimLeft"      => "100",
+                     "DimLeft"      => "",
                      "DimCenter"    => "",
-                     "DimRight"     => "200",
+                     "DimRight"     => "",
                      "DimUp"        => "",
-                     "DimMiddle"    => ""
+                     "DimMiddle"    => "",
+                     "DimCentLeft"  => "",
+                     "DimCentRight" => ""
 
 
                     

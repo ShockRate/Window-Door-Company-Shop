@@ -3,13 +3,19 @@ session_start();
   
   $windowIndex  = $_POST['windowIndex'] -1;
 
-  $width      = $_SESSION['Cart'][$windowIndex]['Width'];
-  $height     = $_SESSION['Cart'][$windowIndex]['Height'];
+  $width        = $_SESSION['Cart'][$windowIndex]['Width'];
+  $height       = $_SESSION['Cart'][$windowIndex]['Height'];
   $clearwidth   = $_SESSION['Cart'][$windowIndex]['ClearWidth'];
   $clearheight  = $_SESSION['Cart'][$windowIndex]['ClearHeight'];
 
-  $dimLeft   = $_SESSION['Cart'][$windowIndex]['DimLeft'];
-  $dimRight  = $_SESSION['Cart'][$windowIndex]['DimRight'];
+  $dimLeft      = $_SESSION['Cart'][$windowIndex]['DimLeft'];
+  $dimCenter    = $_SESSION['Cart'][$windowIndex]['DimCenter'];
+  $dimRight     = $_SESSION['Cart'][$windowIndex]['DimRight'];
+  $dimMiddle    = $_SESSION['Cart'][$windowIndex]['DimMiddle'];
+  $dimUp        = $_SESSION['Cart'][$windowIndex]['DimUp'];
+  $dimCentLeft  = $_SESSION['Cart'][$windowIndex]['DimCentLeft'];
+  $dimCentRight = $_SESSION['Cart'][$windowIndex]['DimCentRight'];
+  
 
   // $setHtml = '';
   $_SESSION['curentClass'] = $_SESSION['Cart'][$windowIndex]['Class'];
@@ -20,8 +26,8 @@ if (isset($_SESSION['curentClass']) && $_SESSION['curentClass']==2){
        $setHtml =  '<div class="builder-container">
                       <div class="builder-left">             
                         <div class="input-container">
-                            <div><input type="text" id="dimLeft" name="width-left-slide" value="'.$dimLeft.'"></div>
-                            <div><input type="text" id="dimRight" name="width-right-slide" value="'.$dimRight.'"></div>        
+                            <div><input type="text" id="dimLeft" name="dimLeft" value="'.$dimLeft.'"></div>
+                            <div><input type="text" id="dimRight" name="dimRight" value="'.$dimRight.'"></div>        
                         </div>
                         <br>
                         <div>
@@ -35,9 +41,9 @@ if (isset($_SESSION['curentClass']) && $_SESSION['curentClass']==2){
         $setHtml = '<div class="builder-container">
                       <div class="builder-left">                
                       <div class="input-container">
-                          <div><input type="text" name="width-left-slide" value="'.($clearwidth/3).'"></div>
-                          <div><input type="text" name="width-center-slide" value="'.($clearwidth/3).'"></div>
-                          <div><input type="text" name="width-right-slide" value="'.($clearwidth/3).'"></div>        
+                          <div><input type="text" name="dimLeft" value="'.$dimLeft.'"></div>
+                          <div><input type="text" name="dimCenter" value="'.$dimCenter.'"></div>
+                          <div><input type="text" name="dimRight" value="'.$dimRight.'"></div>        
                       </div>
                       <br>
                       <div>
@@ -56,8 +62,8 @@ if (isset($_SESSION['curentClass']) && $_SESSION['curentClass']==2){
                       </div>             
                       </div>
                       <div class="builder-right">                 
-                          <div><input type="text" name="height-slide" value="'.($clearwidth/5).'"></div>
-                          <div><input type="text" name="main-height" value="'.($clearwidth*4/5).'"></div>                       
+                          <div><input type="text" name="dimUp" value="'.$dimUp.'"></div>
+                          <div><input type="text" name="dimMiddle" value="'.$dimMiddle.'"></div>                       
                       </div>
                     </div>';
      }else if (isset($_SESSION['curentClass']) && $_SESSION['curentClass']==6) {
@@ -69,21 +75,21 @@ if (isset($_SESSION['curentClass']) && $_SESSION['curentClass']==2){
                         <img src="images/'.$_SESSION['Cart'][$windowIndex]['Type'].'.jpg" alt="'.$_SESSION['Cart'][$windowIndex]['Type'].'.jpg">
                       </div>
                       <div class="input-container">
-                          <div><input type="text" name="width-left-slide"></div>
-                          <div><input type="text" name="width-right-slide"></div>        
+                          <div><input type="text" name="dimLeft" value="'.$dimLeft.'"></div>
+                          <div><input type="text" name="dimRight" value="'.$dimRight.'"></div>        
                       </div>
                       </div>
                       <div class="builder-right">                         
-                          <div><input type="text" name="height-slide"></div>
-                          <div><input type="text" name="main-height"></div>                                                     
+                          <div><input type="text" name="dimUp" value="'.$dimUp.'"></div>
+                          <div><input type="text" name="dimMiddle" value="'.$dimMiddle.'"></div>                                                     
                       </div>
                     </div>';   
      }else if (isset($_SESSION['curentClass']) && $_SESSION['curentClass']==7) {
         $setHtml = '<div class="builder-container">
                       <div class="builder-left">              
                       <div class="input-container">
-                          <div><input type="text" name="width-left-slide"></div>
-                          <div><input type="text" name="width-right-slide"></div>        
+                          <div><input type="text" name="dimLeft" value="'.$dimLeft.'"></div>
+                          <div><input type="text" name="dimRight" value="'.$dimRight.'"></div>        
                       </div>
                       <br>
                       <div>
@@ -91,8 +97,8 @@ if (isset($_SESSION['curentClass']) && $_SESSION['curentClass']==2){
                       </div>
                       </div>
                       <div class="builder-right">                  
-                          <div><input type="text" name="height-slide"></div>
-                          <div><input type="text" name="main-height"></div>                                      
+                          <div><input type="text" name="dimUp" value="'.$dimUp.'"></div>
+                          <div><input type="text" name="dimMiddle" value="'.$dimMiddle.'"></div>                                      
                       </div>
                     </div>'; 
      }else if (isset($_SESSION['curentClass']) && $_SESSION['curentClass']==8) {
@@ -104,23 +110,23 @@ if (isset($_SESSION['curentClass']) && $_SESSION['curentClass']==2){
                         <img src="images/'.$_SESSION['Cart'][$windowIndex]['Type'].'.jpg" alt="'.$_SESSION['Cart'][$windowIndex]['Type'].'.jpg">
                       </div>
                       <div class="input-container">
-                          <div><input type="text" name="width-left-slide"></div>
-                          <div><input type="text" name="width-center-slide"></div>
-                          <div><input type="text" name="width-right-slide"></div>        
+                          <div><input type="text" name="dimLeft" value="'.$dimLeft.'"></div>
+                          <div><input type="text" name="dimCenter" value="'.$dimCenter.'"></div>
+                          <div><input type="text" name="dimRight" value="'.$dimRight.'"></div>        
                       </div>
                       </div>
                       <div class="builder-right">                  
-                          <div><input type="text" name="height-slide"></div>
-                          <div><input type="text" name="main-height"></div>                                        
+                          <div><input type="text" name="dimUp" value="'.$dimUp.'"></div>
+                          <div><input type="text" name="dimMiddle" value="'.$dimMiddle.'"></div>                                        
                       </div>
                     </div>';  
       }else if (isset($_SESSION['curentClass']) && $_SESSION['curentClass']==9) {
         $setHtml = '<div class="builder-container">
                       <div class="builder-left">                
                       <div class="input-container">
-                          <div><input type="text" name="width-left-slide"></div>
-                          <div><input type="text" name="width-center-slide"></div>
-                          <div><input type="text" name="width-right-slide"></div>        
+                          <div><input type="text" name="dimLeft" value="'.$dimLeft.'"></div>
+                          <div><input type="text" name="dimCenter" value="'.$dimCenter.'"></div>
+                          <div><input type="text" name="dimRight" value="'.$dimRight.'"></div>        
                       </div>
                       <br>
                       <div>
@@ -128,16 +134,16 @@ if (isset($_SESSION['curentClass']) && $_SESSION['curentClass']==2){
                       </div>
                       </div>
                       <div class="builder-right">                 
-                          <div><input type="text" name="height-slide"></div>
-                          <div><input type="text" name="main-height"></div>                      
+                          <div><input type="text" name="dimUp" value="'.$dimUp.'"></div>
+                          <div><input type="text" name="dimMiddle" value="'.$dimMiddle.'"></div>                      
                       </div>
                     </div>'; 
      }else if (isset($_SESSION['curentClass']) && $_SESSION['curentClass']==11) {
         $setHtml = '<div class="builder-container">
                         <div class="builder-left">                
                         <div class="input-container-left">
-                            <div><input type="text" name="width-left-slide"></div>
-                            <div><input type="text" name="width-right-slide"></div>        
+                            <div><input type="text" name="dimLeft" value="'.$dimLeft.'"></div>
+                            <div><input type="text" name="dimRight" value="'.$dimCenter.'"></div>        
                         </div>
                         <br>
                         <div>
@@ -151,8 +157,8 @@ if (isset($_SESSION['curentClass']) && $_SESSION['curentClass']==2){
         $setHtml = '<div class="builder-container">
               <div class="builder-left">                
               <div class="input-container-right">
-                  <div><input type="text" name="width-left-slide"></div>
-                  <div><input type="text" name="width-right-slide"></div>        
+                  <div><input type="text" name="dimLeft" value="'.$dimCenter.'"></div>
+                  <div><input type="text" name="dimRight" value="'.$dimRight.'"></div>        
               </div>
               <br>
               <div>
@@ -165,9 +171,10 @@ if (isset($_SESSION['curentClass']) && $_SESSION['curentClass']==2){
         $setHtml = '<div class="builder-container">
               <div class="builder-left">                
               <div class="input-container">
-                  <div><input type="text" name="width-left-slide"></div>
-                  <div><input type="text" name="width-center-slide"></div>
-                  <div><input type="text" name="width-right-slide"></div>        
+              
+                  <div><input type="text" name="dimLeft" value="'.$dimLeft.'"></div>
+                  <div><input type="text" id="dimCenter" name="dimCenter" value="'.$dimCenter.'"></div>
+                  <div><input type="text" name="dimRight" value="'.$dimRight.'"></div>        
               </div>
               <br>
               <div>
@@ -183,19 +190,36 @@ if (isset($_SESSION['curentClass']) && $_SESSION['curentClass']==2){
               <br>
               <br>
               <div>
-                <img src="./images/Fiix_3_point + DoubleEntrance.jpg" alt="Fiix_3_point + DoubleEntrance.jpg">
+                <img src="images/'.$_SESSION['Cart'][$windowIndex]['Type'].'.jpg" alt="'.$_SESSION['Cart'][$windowIndex]['Type'].'.jpg">
               </div>
               <div class="input-container">
-                  <div><input type="text" name="width-left-slide"></div>
-                  <div><input type="text" name="width-center-slide"></div>
-                  <div><input type="text" name="width-right-slide"></div>        
+                   <div><input type="text" name="dimLeft" value="'.$dimLeft.'"></div>
+                  <div><input type="text" name="dimCenter" value="'.$dimCenter.'"></div>
+                  <div><input type="text" name="dimRight" value="'.$dimRight.'"></div>        
               </div>
               </div>
               <div class="builder-right">                  
-                  <div><input type="text" name="height-slide"></div>
-                  <div><input type="text" name="main-height"></div>                                   
+                  <div><input type="text" name="dimUp" value="'.$dimUp.'"></div>
+                  <div><input type="text" name="dimMiddle" value="'.$dimMiddle.'"></div>                                   
               </div>
-            </div>';                                                                                                              
+            </div>'; 
+     }else if (isset($_SESSION['curentClass']) && $_SESSION['curentClass']==15) {
+        $setHtml = '<div class="builder-container">
+                      <div class="builder-left">                
+                      <div class="input-container">
+                          <div><input type="text" name="dimLeft" value="'.$dimLeft.'"></div>
+                          <div><input type="text" name="dimCentLeft" value="'.$dimCentLeft.'"></div>
+                          <div><input type="text" name="dimCentRight" value="'.$dimCentRight.'"></div>
+                          <div><input type="text" name="dimRight" value="'.$dimRight.'"></div>        
+                      </div>
+                      <br>
+                      <div>
+                        <img src="images/'.$_SESSION['Cart'][$windowIndex]['Type'].'.jpg" alt="'.$_SESSION['Cart'][$windowIndex]['Type'].'.jpg">
+                      </div>
+                      </div>
+                      <div class="builder-right-empty">                                                                      
+                      </div>
+                    </div>';                                                                                                             
      }else{
        $setHtml = '<img class="img-responsive" src="images/'.$_SESSION['Cart'][$windowIndex]['Type'].'.jpg" style = "max-width: 236px; max-height: 236px;"> ';
     }

@@ -5,8 +5,8 @@
                 </div>
               </div>
               <div class="table-dim-right">                  
-                  <div><span>_upHeight</span></div>
-                  <div><span>_downHeight</span></div>                       
+                  <div><span>_dimUp</span></div>
+                  <div><span>_dimMiddle</span></div>                       
               </div>
             </div>
          

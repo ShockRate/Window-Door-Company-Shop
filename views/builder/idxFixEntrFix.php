@@ -3,9 +3,9 @@
               <div>
                 
               <div class="table-dim-top">
-                    <div><span>_halfWidth</span></div>
-                    <div><span>_halfWidth</span></div>
-                    <div><span>_halfWidth</span></div>        
+                    <div><span>_dimLeft</span></div>
+                    <div><span>_dimCenter</span></div>
+                    <div><span>_dimRight</span></div>        
                 </div>
           
               <div>

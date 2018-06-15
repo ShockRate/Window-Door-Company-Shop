@@ -80,7 +80,7 @@
 
 /*CSS ΥΠΕΥΘΥΝΟ ΓΙΑ ΤΟΝ HTML ΚΩΔΙΚΑ ΠΟΥ ΕΜΦΑΝΙΖΕΙ ΕΙΚΟΝΑ ΤΗΣ ΚΑΤΑΣΚΕΥΗΣ ΚΑΙ ΤΩΝ ΔΙΑΣΤΑΣΕΩΝ ΣΤΟΝ ΠΙΝΑΚΑ*/
 .table-cell{
-	text-align: left;
+	text-align: center;
 	margin: 5%;
 }
 .table-container{
@@ -104,7 +104,7 @@
 }
 
 .table-dim-top div{
-	width: auto;
+	width: 30%;
 	display: flex;
 	margin-left: 5%;
     margin-right: 5%;	
@@ -119,15 +119,15 @@
 
 .table-dim-right {
 
-	margin-top: 15%;
+	margin-top: 5%;
 	
 	/*margin-top: 20%;*/
 
 }
 .table-dim-right span{
-
-	margin-top: 15%;
-	
+	display: block;
+	margin-top: 5%;
+	margin-bottom: 40%;
 	background-color: yellow;
 
 }

@@ -3,8 +3,8 @@
               <div>
                 
               <div class="table-dim-top-right">
-                  <div><span>_halfWidth</span></div>
-                  <div><span>_halfWidth</span></div>         
+                  <div><span>_dimCenter</span></div>
+                  <div><span>_dimRight</span></div>          
               </div>
               <div>
                 <img src="./images/_imgSrc.jpg" alt="_imgSrc.jpg" width="106" height="117">

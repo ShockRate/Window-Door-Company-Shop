@@ -14,7 +14,7 @@
                    <div id="dimensionsSet">
                  
                    </div>
-                   <button type="button" class="btn btn-danger" id="updateDimensions">
+                   <button type="button" class="btn btn-danger" id="updateDimensions" onclick="updateDimensions()">
                       ΕΝΗΜΕΡΩΣΗ ΔΙΑΣΤΑΣΕΩΝ
                    </button>
                   <br>

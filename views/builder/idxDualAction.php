@@ -1,4 +1,4 @@
-           <div class="table-container">
+          <!--  <div class="table-container">
             <div>
                 <div class="table-dim-top">
                   <div><span>_halfWidth</span></div>
@@ -10,8 +10,8 @@
               </div>  
               <div class="table-dim-empty">                                                                   
               </div>         
-            </div>
-            <!--  <div class="table-container">
+            </div> -->
+             <div class="table-container">
             <div>
                 <div class="table-dim-top">
                   <div><span>_dimLeft</span></div>
@@ -23,6 +23,6 @@
               </div>  
               <div class="table-dim-empty">                                                                   
               </div>         
-            </div> -->
+            </div>
 
   
