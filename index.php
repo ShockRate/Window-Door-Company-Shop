@@ -129,7 +129,7 @@ if (isset($newItem)) {
                      "DimLeft"      => "",
                      "DimCenter"    => "",
                      "DimRight"     => "",
-                     "DimUp"        => "",
+                     "DimUp"        => "200",
                      "DimMiddle"    => "",
                      "DimCentLeft"  => "",
                      "DimCentRight" => ""

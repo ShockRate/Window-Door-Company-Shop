@@ -50,33 +50,23 @@ $('.myDetailsBtn').on('click',function(){
       $("#myDetailsModal").modal("show");
 });
 
-// $('#updateDimensions').click(function() {
 
+// $('#updateDimensions').click(function(){
+//     var valindex = $('#windowIndex').val();
+//     var valdimCenter = $('#dimCenter').val();
+//     var valdimRight = $('#dimRight').val();
+//     var valdimLeft = $('#dimLeft').val();
+//     $('#result1').html(valdimLeft);
+//     $.ajax({
+//         type: 'POST',
+//         url: 'inc/updateDimensions.php',
+//         data: { index: valindex, dimCenter: valdimCenter, dimLeft: valdimLeft, dimRight: valdimRight},
+//         success: function(response) {
+            
+//          }
 
 // });
-
-function updateDimensions(){
-    var valindex = document.getElementById("windowIndex").value;
-    var valdimCenter = document.getElementsByName("dimCenter").value;
-    var valdimRight = document.getElementsByName('dimRight');
-    var valdimLeft = document.getElementsByName('dimLeft');
-    var valdimUp = document.getElementsByName('dimUp');
-    var valdimMiddle = document.getElementsByName('dimMiddle');
-    var valdimCentRight = document.getElementsByName('dimCentRight');
-    var valdimCentLeft = document.getElementsByName('dimCentLeft');
-
-    document.getElementById("result1").innerHTML = valindex;
-
-    $.ajax({
-        type: 'POST',
-        url: 'inc/updateDimensions.php',
-        data: { index: valindex, dimCenter: valdimCenter, dimLeft: valdimLeft, dimRight: valdimRight, 
-            dimUp: valdimUp, dimMiddle: valdimMiddle, dimCentRight: valdimCentRight, dimCentLeft: valdimCentLeft},
-        success: function(response) {
-            //$('#result1').html(response);
-        }
-    });
-}
+//     });
 
 $('#updateOrder').click(function() {   
     var val0 = $('#windowIndex').val();
@@ -86,12 +76,32 @@ $('#updateOrder').click(function() {
     var val4 = $('#detailsNotes').val();
     var val5 = $('#pieces').val();
 
+    var valdimCenter = $('#dimCenter').val();
+    var valdimRight = $('#dimRight').val();
+    var valdimLeft = $('#dimLeft').val();
+    var valdimUp = $('#dimUp').val();
+    var valdimMiddle = $('#dimMiddle').val();
+    var valdimCentRight = $('#dimCentRight').val();
+    var valdimCentLeft = $('#dimCentLeft').val();
+
     $.ajax({
         type: 'POST',
         url: 'inc/updateDetails.php',
-        data: { windowIndex: val0, shutters: val1, screens: val2, profiles: val3, detailsNotes: val4, pieces: val5},
+        data: { windowIndex: val0, 
+                shutters: val1, 
+                screens: val2, 
+                profiles: val3, 
+                detailsNotes: val4, 
+                pieces: val5, 
+                dimCenter: valdimCenter, 
+                dimLeft: valdimLeft, 
+                dimRight: valdimRight,
+                dimUp: valdimUp, 
+                dimMiddle: valdimMiddle, 
+                dimCentRight: valdimCentRight, 
+                dimCentLeft: valdimCentLeft},
         success: function(response) {
-            $('#result1').html(response);
+            //$('#result1').html(response);
         }
     });
  $('t01 tr:eq(val0) td:eq(8)').val(val3);

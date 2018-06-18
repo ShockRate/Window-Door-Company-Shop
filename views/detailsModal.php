@@ -14,10 +14,9 @@
                    <div id="dimensionsSet">
                  
                    </div>
-                   <button type="button" class="btn btn-danger" id="updateDimensions" onclick="updateDimensions()">
-                      ΕΝΗΜΕΡΩΣΗ ΔΙΑΣΤΑΣΕΩΝ
-                   </button>
+                   
                   <br>
+                   <div id="result1"></div>
                   <?php //include_once 'views/testingHTML.php'; ?>
                 </div>   
                 <div class="block">
@@ -50,7 +49,7 @@
 
                 
               </div>                            
-              <div id="result1"></div>
+             
              
               
               
