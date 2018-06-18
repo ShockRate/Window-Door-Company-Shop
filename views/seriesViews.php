@@ -1,3 +1,4 @@
+<!-- VIEW ΓΙΑ ΕΠΙΛΟΓΗ ΣΕΙΡΑΣ ΤΖΑΜΙΟΥ ΚΑΙ ΧΡΩΜΑΤΟΣ -->
 <!-- <div class="row">	 -->
    <div class="container" style="text-align: center; margin-left: auto; margin-right: auto; width: 50%">
    <!--  <div class="col-xs-6 col-lg-6" > -->

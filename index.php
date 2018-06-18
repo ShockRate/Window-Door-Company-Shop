@@ -73,29 +73,6 @@
         $newOrder               = $Check->PagePostVars('newOrder');
 
 
-
-//Variables for Testing
-        $download               = $Check->PagePostVars('download');
-        $tmpfname2               = $_SERVER['DOCUMENT_ROOT'].'/test-shop/Prototype.xlsx';
-        //$prototypesheet          = $reader->load($tmpfname2);   
-
-        $prototypesheet         = new Spreadsheet();  /*----Spreadsheet object-----*/
-        //$Excel_writer           = new Xlsx($prototypesheet);  /*----- Excel (Xls) Object*/
-        //$prototypesheet->setActiveSheetIndex(0);
-        $activeSheet            = $prototypesheet->getActiveSheet();
-
-        
-//ΔΟΚΙΜΗ. ΑΛΛΑΖΟΥΜΕ ΜΙΑ ΤΙΜΗ ΣΕ ΕΝΑ SSHEET ΚΑΙ ΠΡΟΣΠΑΘΩ ΝΑ ΤΟ ΚΑΤΕΒΑΣΩ
-if (isset($download)) {        
-        //$prototypesheet->getActiveSheet()->setCellValue('J5' , 'New file content')->getStyle('J5')->getFont()->setBold(true);
-         header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-         header('Content-Disposition: attachment;filename="filename.xlsx"'); /*-- $filename is  xsl filename ---*/
-         header('Cache-Control: max-age=0');
-         $Excel_writer = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($prototypesheet, 'Xlsx');
-         $Excel_writer->save('php://output');      
-}
-        
-
 if(isset($newOrder)){
 
     
