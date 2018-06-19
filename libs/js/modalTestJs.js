@@ -51,30 +51,19 @@ $('.myDetailsBtn').on('click',function(){
 });
 
 
-// $('#updateDimensions').click(function(){
-//     var valindex = $('#windowIndex').val();
-//     var valdimCenter = $('#dimCenter').val();
-//     var valdimRight = $('#dimRight').val();
-//     var valdimLeft = $('#dimLeft').val();
-//     $('#result1').html(valdimLeft);
-//     $.ajax({
-//         type: 'POST',
-//         url: 'inc/updateDimensions.php',
-//         data: { index: valindex, dimCenter: valdimCenter, dimLeft: valdimLeft, dimRight: valdimRight},
-//         success: function(response) {
-            
-//          }
-
-// });
-//     });
 
 $('#updateOrder').click(function() {   
-    var val0 = $('#windowIndex').val();
-    var val1 = $('#shutters').val();
-    var val2 = $('#screens').val();
-    var val3 = $('#profiles').val();
-    var val4 = $('#detailsNotes').val();
-    var val5 = $('#pieces').val();
+    var valIndex = $('#windowIndex').val();
+    var valShutters = $('#shutters').val();
+    var valScreens = $('#screens').val();
+    var valProfiles = $('#profiles').val();
+    var valNotes = $('#detailsNotes').val();
+    var valPieces = $('#pieces').val();
+
+    var valWidth = $('#detailsWidth').val();
+    var valHeight = $('#detailsHeight').val();
+    var valClearWidth = $('#detailsClearWidth').val();
+    var valClearHeight = $('#detailsClearHeight').val();
 
     var valdimCenter = $('#dimCenter').val();
     var valdimRight = $('#dimRight').val();
@@ -87,12 +76,16 @@ $('#updateOrder').click(function() {
     $.ajax({
         type: 'POST',
         url: 'inc/updateDetails.php',
-        data: { windowIndex: val0, 
-                shutters: val1, 
-                screens: val2, 
-                profiles: val3, 
-                detailsNotes: val4, 
-                pieces: val5, 
+        data: { windowIndex: valIndex, 
+                shutters: valShutters, 
+                screens: valScreens, 
+                profiles: valProfiles, 
+                detailsNotes: valNotes, 
+                pieces: valPieces, 
+                width: valWidth,
+                height: valHeight,
+                clearWidth: valClearWidth,
+                clearHeight: valClearHeight,
                 dimCenter: valdimCenter, 
                 dimLeft: valdimLeft, 
                 dimRight: valdimRight,
@@ -102,9 +95,11 @@ $('#updateOrder').click(function() {
                 dimCentLeft: valdimCentLeft},
         success: function(response) {
             //$('#result1').html(response);
+            
         }
     });
  $('t01 tr:eq(val0) td:eq(8)').val(val3);
+ location.reload(true);
 
 });   
 
