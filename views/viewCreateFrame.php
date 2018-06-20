@@ -1,41 +1,47 @@
 <br>
-<div style="text-align: center;">
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#designModal" style="text-align: center; left: 50%" >
+<div class="modal-button">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createFrame">
   NEW DESIGN
   </button>
 </div>
 
 
 
-<!-- bs-example-modal-sm -->
-<div class="modal fade" tabindex="-1" id="designModal">
-  <!-- <div class="modal-dialog"> -->
+
+<div class="modal fade" tabindex="-1" id="createFrame">
+  <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-        <h4 class="modal-title" id="mySmallModalLabel">Codes &amp; Company</h4>
-        <div class="tab" style="text-align: center;">
+        <h4 class="modal-title" id="mySmallModalLabel">Windows &amp; Doors</h4>
+        <!-- <div class="tab" style="text-align: center;">
                   <button class="tablinks" onclick="openTab(event, 'tab-meters')" id="defaultOpen">Meters</button>
                   <button class="tablinks" onclick="openTab(event, 'tab-feet')">Feet</button>
                  
-              </div>
+              </div> -->
 
       </div>
       <div class="modal-body">
         
-        <form method="post" action="index.php">
-          <!-- <div class="container"> -->
+       
+          
             <div class="row">
-           <div class="col-xs-3 col-lg-3" >
+           
                
-           <!--  <div id="modal-left"> -->
-            <div style="position: fixed;" >
-            <img id="productImage" src="images/2P-DA-L.jpg" style = "max-width: 236px; max-height: 236px;">
+           
+            <div class="productSidenav">
+            <img id="productImage" src="images/2P-DA-L.jpg">
             <span id="productLabel" name ="productLabel"></span>
+            <div class="tab" style="text-align: center;">
+                  <button class="tablinks" onclick="openTab(event, 'tab-meters')" id="defaultOpen">Meters</button>
+                  <button class="tablinks" onclick="openTab(event, 'tab-feet')">Feet</button>      
+            </div>
+            <form method="post" action="index.php">
             <input type="hidden" name="productName" id="productName">
-            <input type="hidden" name="productClass" id="productClass">
+            <input type="text-align" name="productClass" id="productClass">
              
             <div class="formContent">
+              
                 <div id="tab-meters" class="tabcontent">
                   <div class="block">
                     <label class="input-label">ΠΛΑΤΟΣ:</label>
@@ -75,30 +81,30 @@
               </div>
               <br>
               <input type="submit" value="Προσθήκη" class="btn btn-primary" name="newItem">
-              </div>
-            </div> <!-- modal-left or col-md-6-->
+            </div>
+         
             
            
             
-            <div class="col-xs-9 col-lg-9" >
-              <div class="modal-right" style="margin-left: 10%">
-            <ul class="nav nav-tabs" role="tablist">
-              <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#windows">Windows</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#sliding">Sliding</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#doors">Doors</a>
-              </li>
-            </ul>
+            
+            <div class="main-panel">
+              <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#windows">Windows</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#sliding">Sliding</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#doors">Doors</a>
+                </li>
+              </ul>
 
             <div class="tab-content">
                 <div id="windows" class="tab-pane active"><br>
                   <h3>Windows</h3>
                   <div class="panel-body">
-                    <?php for ($row = 3; $row <= 17; ++ $row) { 
+                    <?php for ($row = 3; $row <= 20; ++ $row) { 
                       $vartype =$typesWorksheet->getCellByColumnAndRow('2',"$row")->getValue();
                       $varclass=$typesWorksheet->getCellByColumnAndRow('3',"$row")->getValue();
                       $varname =$typesWorksheet->getCellByColumnAndRow('1',"$row")->getValue(); ?>
@@ -119,7 +125,7 @@
                 <div id="sliding" class="tab-pane fade"><br>
                   <h3>Sliding</h3>
                   <div class="panel-body">
-                    <?php for ($row = 18;$row <=  33; ++ $row) { 
+                    <?php for ($row = 21;$row <=  36; ++ $row) { 
                       $vartype =$typesWorksheet->getCellByColumnAndRow('2',"$row")->getValue();
                       $varclass=$typesWorksheet->getCellByColumnAndRow('3',"$row")->getValue();
                       $varname =$typesWorksheet->getCellByColumnAndRow('1',"$row")->getValue(); ?>
@@ -140,7 +146,7 @@
                 <div id="doors" class="tab-pane fade"><br>
                   <h3>Doors</h3>
                   <div class="panel-body">
-                    <?php for ($row = 34;$row <= $typesWorksheet->getHighestRow('B'); ++ $row) { 
+                    <?php for ($row = 37;$row <= $typesWorksheet->getHighestRow('B'); ++ $row) { 
                       $vartype =$typesWorksheet->getCellByColumnAndRow('2',"$row")->getValue();
                       $varclass=$typesWorksheet->getCellByColumnAndRow('3',"$row")->getValue();
                       $varname =$typesWorksheet->getCellByColumnAndRow('1',"$row")->getValue(); ?>
@@ -159,12 +165,12 @@
                   </div> <!-- panel-body fbody -->
                 </div>
                 
-              </div>
-            <!-- <div id="modal-right"> -->
             </div>
-            </div> <!-- modal-right or col-md-6-->
+            
+            </div>
+           
             </div> <!-- row -->
-         <!--  </div> --> <!-- container -->
+        
         </form>
 
 
@@ -174,8 +180,6 @@
             <button type="button" class="btn btn-primary">Save changes</button>
           </div>
       </div> <!-- modal-content -->
-  <!-- </div> --> <!-- modal-dialog -->
+  </div> <!-- modal-dialog -->
 </div> <!-- modal fade -->
 <br>
-<!-- 
-class="col-md-6" -->

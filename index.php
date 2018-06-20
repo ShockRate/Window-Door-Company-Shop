@@ -193,13 +193,13 @@ if (isset($newItem)) {
             
             include_once 'views/testingHTML.php';
             //include_once 'views/designModal.php';
-            include_once 'views/V2designModal.php';
-            include_once 'views/detailsModal.php';
-            include_once 'views/designOrderDetails.php';
-            include_once 'views/designTable.php';
-            include_once 'views/windowsill.php';          
+            include_once 'views/viewCreateFrame.php';
+            include_once 'views/viewDetails.php';
+            include_once 'views/viewOrderDetails.php';
+            include_once 'views/viewOrderTable.php';
+            include_once 'views/viewFrameSill.php';          
         } else {
-            include_once 'views/seriesViews.php'; 
+            include_once 'views/viewCreateOrder.php'; 
 
         }
  

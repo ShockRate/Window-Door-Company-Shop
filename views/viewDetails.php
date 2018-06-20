@@ -1,9 +1,9 @@
-<div class="modal fade" id="myDetailsModal">
+<div class="modal fade" id="itemDetailsModal">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-        <h4 class="modal-title" id="mySmallModalLabel">Codes &amp; Company</h4>
+        <h4 class="modal-title" id="mySmallModalLabel">Πρόσθετα στοιχεία</h4>
       </div>
       <!-- <div class="row"> -->
         <div class="modal-body">

@@ -21,7 +21,7 @@
                 border: 1px solid black;
                 border-collapse: collapse;
             }
-            .sillsTable{
+            .sillsTable td{
                 border: transparent;
                 background-color: white;
                 text-align: center;
@@ -114,8 +114,17 @@
 
             .container {
               position: relative;
+              text-align: center;
               
             }
+            .sills-container {
+                position: relative;
+                text-align: center;
+                width: 50%;
+                margin-left: auto;
+                margin-right: auto;
+                
+              }
 
             
             

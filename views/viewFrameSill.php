@@ -1,7 +1,7 @@
 <br>
 <!-- bs-example-modal-sm -->
 <div class="modal fade" tabindex="-1" id="windowsill">
-  <<!-- div class="modal-dialog"> -->
+  <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
@@ -10,16 +10,16 @@
       </div>
       <div class="modal-body">
        <!-- <form method="post" action="index.php">  -->
-        <p><input type="text" id="sillIndex" name="sillIndex"></p>
-         <p><input type="text" id="sillsImageSrc" name="sillsImageSrc"></p>
+        <p><input type="hidden" id="sillIndex" name="sillIndex"></p>
+         <p><input type="hidden" id="sillsImageSrc" name="sillsImageSrc"></p>
          
         
           
 
-        <div class="container">
+        <div class="sills-container">
           <div class="row row-eq-height">
            
-           <div class="col-xs-1 col-lg-1">
+           <div class="col-xs-3 col-lg-3">
             <div class="vertical-center"> 
                   <label class="checkbox-inline">
                     <p><input type="text" class="input-sm" id = "inputLeft" style="width: 50px" /></p>
@@ -28,7 +28,7 @@
             </div>  
 
             
-            <div class="col-xs-3 col-lg-3 text-center">
+            <div class="col-xs-9 col-lg-9 text-center">
                
               <label class="checkbox-inline">
                 <p><input type="text" class="input-sm" id = "inputUp" style="width: 50px"/></p>
@@ -42,7 +42,7 @@
             </div>
             
 
-             <div class="col-xs-1 col-lg-1 text-left">
+             <div class="col-xs-3 col-lg-3 text-left">
               <div class="vertical-center">
                 <label class="checkbox-inline">
                   <p><input type="text" class="input-sm" id = "inputRight" style="width: 50px"/></p>
@@ -50,7 +50,7 @@
               </div>
             </div>          
           </div>
-        </div> 
+        </div> <!--container-->
         <!-- <input type="submit" value="Προσθήκη" class="btn btn-primary" name="newSills">
         </form> -->
       </div> <!-- modal-body -->
@@ -59,7 +59,7 @@
             <button type="button" class="btn btn-default" id="closeSillsModal" data-dismiss="modal">Close</button>           
           </div>
       </div> <!-- modal-content -->
- <!--  </div> --> <!-- modal-dialog -->
+  </div> <!-- modal-dialog -->
 </div> <!-- modal fade -->
 <br>
 

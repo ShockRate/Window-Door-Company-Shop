@@ -33,7 +33,7 @@ echo $series;
 				    <td><?php echo $arr['Name'];?></td>
 				    <td><?php echo $arr['Pieces'];?></td>
 				    <td><?php echo $arr['Width'].'/<br>'.$arr['Height'];?></td>
-				    <td><?php include 'views/sills.php';?></td>
+				    <td><?php include 'views/divSills.php';?></td>
 				  
 				    <td class="table-cell"><?php //include 'views/builder/idxDualAction.php';
 				    			//echo $tableBuilder->printImg($arr['Type'],$arr['Class'],$arr['Width'],$arr['Height']);

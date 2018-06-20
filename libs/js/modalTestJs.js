@@ -47,7 +47,7 @@ $('.myDetailsBtn').on('click',function(){
         }
     });
    
-      $("#myDetailsModal").modal("show");
+      $("#itemDetailsModal").modal("show");
 });
 
 
