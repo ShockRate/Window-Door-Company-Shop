@@ -64,8 +64,9 @@
                 margin-left: 5px;
                 text-align: right;
                 width: 70px;
-                
+                vertical-align: middle;               
             }
+            
             .formContent { 
                 margin-top: 20px; 
                 margin-left: 20px;

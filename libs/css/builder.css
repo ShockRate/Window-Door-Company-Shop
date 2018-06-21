@@ -82,6 +82,8 @@
 .table-cell{
 	text-align: center;
 	margin: 5%;
+
+	padding-right: 15%;
 }
 .table-container{
 	position: relative;
@@ -114,6 +116,7 @@
 .table-dim-top span{
 	/*border: 1px solid black;*/
 	font-size: 6;
+	background-color: yellow;
 
 }
 
