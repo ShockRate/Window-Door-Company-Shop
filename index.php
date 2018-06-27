@@ -180,6 +180,9 @@ if (isset($newItem)) {
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="http://html2canvas.hertzen.com/build/html2canvas.js"></script>
 
+ 
+
+
 </head>
 <body>
 
@@ -207,11 +210,15 @@ if (isset($newItem)) {
   <br>
   <div style="text-align: center;">
                     <button type="button" class="btn btn-warning" id="clearTable">CLEAR THE ORDER</button>
+                    <br>
+                    <button type="button" class="btn btn-warning" id="btn-test">TEST THE FUNCTION</button>
+                    <div id="result"> 
+                   </div>
     </div>
     <br>
      <form method="post" action="inc/download.php">
         <div style="text-align: center;">
-             <input type="submit" value="Download Excel" class="btn btn-primary" name="download">
+             <input type="submit" value="Download Excel" class="btn btn-primary" id="btn-download" name="download" >
         </div>
      </form>
 </div>

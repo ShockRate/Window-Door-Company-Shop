@@ -9,7 +9,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="products.php">XYZ Webstore</a>
+            <a class="navbar-brand" href="products.php">EPAL Webstore</a>
         </div>
  
         <div class="navbar-collapse collapse">

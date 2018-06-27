@@ -422,5 +422,36 @@ function HeightConverter() {
     document.getElementById("height").value=result.toFixed(2);;
 }
 
+$('#btn-test').click(function(){
+    // This have to be the ID of your table, not the tag
+     
 
+    //get the div content
+    div_content = document.querySelector("#t01");
+    
+    //make it as html5 canvas
+    html2canvas(div_content).then(function(canvas) {
+        //change the canvas to jpeg image
+        data = canvas.toDataURL('image/jpeg');
+        
+        //then call a super hero php to save the image
+        save_img(data);
+    });
+});
+
+function save_img(data){
+    //ajax method.
+    $.post('save_jpg.php', {data: data}, function(res){
+        //if the file saved properly, trigger a popup to the user.
+        if(res != ''){
+            yes = confirm('File saved in output folder, click ok to see it!');
+            if(yes){
+                location.href =document.URL+'output/'+res+'.jpg';
+            }
+        }
+        else{
+            alert('something wrong');
+        }
+    });
+}
 
