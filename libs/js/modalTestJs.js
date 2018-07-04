@@ -427,10 +427,10 @@ $('#btn-test').click(function(){
      
 
     //get the div content
-    div_content = document.querySelector("#t01");
+    div_content = document.querySelectorAll('.table-builder');
     
     //make it as html5 canvas
-    html2canvas(div_content).then(function(canvas) {
+    html2canvas(div_content[0]).then(function(canvas) {
         //change the canvas to jpeg image
         data = canvas.toDataURL('image/jpeg');
         

@@ -122,18 +122,25 @@ function copyRange( Worksheet $sheet, $srcRange, $dstCell) {
         }
     }
 }
-
-//FUNCTION ADD IMAGE
-function addImage($path,$name,$coordinates,$sheet){
+function productWIdth($class){
+    if ( $class == 2 || $class == 6){}
+    return $width;
+}
+//ADDS PRODUCT IMAGE TO EXCEL 
+public function addImage($path,$name,$coordinates,$sheet){
                     $drawing = new \PhpOffice\PhpSpreadsheet\Worksheet\Drawing();
                     $drawing->setPath($path);
                     $drawing->setName($name);
                     $drawing->setCoordinates($coordinates);
                     $drawing->setOffsetX(10);
                     $drawing->setOffsetY(10);
+                    $drawing->setResizeProportional(false);
+                    $drawing->setHeight(50);
+                    $drawing->setWidth(200);
                     $drawing->setWorksheet($sheet);
 }
-function addSillImage($path,$name,$coordinates,$sheet){
+//ADDS SILLS IMAGE TO EXCEL
+public function addSillImage($path,$name,$coordinates,$sheet){
                     $drawing = new \PhpOffice\PhpSpreadsheet\Worksheet\Drawing();
                     $drawing->setPath($path);
                     $drawing->setName($name);

@@ -8,7 +8,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/test-shop/inc/copyRows.php';
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 //$spreadsheet            = new Spreadsheet();
-$tmpfname               = $_SERVER['DOCUMENT_ROOT'].'/test-shop/2_Prototype.xlsx';
+$tmpfname               = $_SERVER['DOCUMENT_ROOT'].'/test-shop/3_Prototype.xlsx';
 $CopyRows       		= new copyRows;
 $reader 				= new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
 $spreadsheet            = $reader->load($tmpfname);   
@@ -20,7 +20,7 @@ $counter 				= 1;
 
 for ($i=0; $i < (sizeof($_SESSION['Cart'])-1); $i++) { 
                
-            $CopyRows->pushRows($worksheet, 5, 3+$pushval, 3, 23);
+            $CopyRows->pushRows($worksheet, 5, 3+$pushval, 3, 24);
             $pushval = $pushval +3;
             }			
 foreach ($_SESSION['Cart'] as $arr) { 
@@ -29,11 +29,16 @@ foreach ($_SESSION['Cart'] as $arr) {
 	//$spreadsheet->getActiveSheet()->setCellValue('J'.$index , $arr['Type'])->getStyle('J'.$index)->getFont()->setBold(true);
 	$worksheet->setCellValue('G'.$index, $arr['Width'].' '."\r\n".' '.$arr['Height'] );
 	$worksheet->setCellValue('K'.$index, $arr['ClearWidth'].' '."\r\n".' '.$arr['ClearHeight'] );
-	$worksheet->setCellValue('P'.$index , $arr['Profile']);
-	$worksheet->setCellValue('P'.($index+1) , $arr['Shutters']);
-	$worksheet->setCellValue('S'.($index+1) , $arr['Screens']);
-	//ADD IMAGE
-    $CopyRows->addImage('../images/Small/'.$arr['Type'].'.jpg',$arr['Type'].'jpg','L'.($index+1),$spreadsheet->getActiveSheet());
+	$worksheet->setCellValue('Q'.$index , $arr['Profile']);
+	$worksheet->setCellValue('Q'.($index+1) , $arr['Shutters']);
+	$worksheet->setCellValue('T'.($index+1) , $arr['Screens']);
+	//ADD PRODUCT IMAGE AND DIMENSIONS
+    $CopyRows->addImage('../images/Small/'.$arr['Type'].'.jpg',$arr['Type'].'jpg','M'.$index,$spreadsheet->getActiveSheet());
+    $worksheet->setCellValue('L'.$index , $arr['DimUp']);
+    $worksheet->setCellValue('L'.($index+1) , $arr['DimMiddle']);
+    $worksheet->setCellValue('M'.($index+2) , $arr['DimLeft']);
+    $worksheet->setCellValue('N'.($index+2) , $arr['DimCenter']);
+    $worksheet->setCellValue('O'.($index+2) , $arr['DimRight']);
     //Add siils
     $CopyRows->addSillImage('../'.$arr['Sills'],$arr['Sills'],'I'.($index+1),$spreadsheet->getActiveSheet());
     $worksheet->setCellValue('I'.$index , $arr['SillUp']);

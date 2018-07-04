@@ -172,13 +172,15 @@ if (isset($newItem)) {
     <!-- <link href="libs/css/modal.css" rel="stylesheet" media="screen"> --> 
     
    
-
+   
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> -->
 
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="http://html2canvas.hertzen.com/build/html2canvas.js"></script>
+
+    <script type="text/javascript" src="libs/js/html2canvas.js"></script>
 
  
 
@@ -210,6 +212,7 @@ if (isset($newItem)) {
   <br>
   <div style="text-align: center;">
                     <button type="button" class="btn btn-warning" id="clearTable">CLEAR THE ORDER</button>
+                    <br>
                     <br>
                     <button type="button" class="btn btn-warning" id="btn-test">TEST THE FUNCTION</button>
                     <div id="result"> 
