@@ -135,8 +135,8 @@ public function addImage($path,$name,$coordinates,$sheet){
                     $drawing->setOffsetX(10);
                     $drawing->setOffsetY(10);
                     $drawing->setResizeProportional(false);
-                    $drawing->setHeight(50);
-                    $drawing->setWidth(200);
+                    $drawing->setHeight(100);
+                    $drawing->setWidth(150);
                     $drawing->setWorksheet($sheet);
 }
 //ADDS SILLS IMAGE TO EXCEL
