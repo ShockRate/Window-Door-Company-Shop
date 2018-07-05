@@ -24,7 +24,8 @@ for ($i=0; $i < (sizeof($_SESSION['Cart'])-1); $i++) {
             $pushval = $pushval +3;
             }			
 foreach ($_SESSION['Cart'] as $arr) { 
-	$worksheet->setCellValue('A'.$index, $counter);
+    $worksheet->setCellValue('A'.$index, $counter);
+    $counter++;
 	$worksheet->setCellValue('C'.$index , $arr['Name'])->getStyle('J'.$index)->getFont()->setBold(true);
 	//$spreadsheet->getActiveSheet()->setCellValue('J'.$index , $arr['Type'])->getStyle('J'.$index)->getFont()->setBold(true);
 	$worksheet->setCellValue('G'.$index, $arr['Width'].' '."\r\n".' '.$arr['Height'] );
@@ -33,21 +34,27 @@ foreach ($_SESSION['Cart'] as $arr) {
 	$worksheet->setCellValue('Q'.($index+1) , $arr['Shutters']);
 	$worksheet->setCellValue('T'.($index+1) , $arr['Screens']);
 	//ADD PRODUCT IMAGE AND DIMENSIONS
-    $CopyRows->addImage('../images/Small/'.$arr['Type'].'.jpg',$arr['Type'].'jpg','M'.$index,$spreadsheet->getActiveSheet());
+    $CopyRows->addImage($arr['Class'],'../images/Small/'.$arr['Type'].'.jpg',$arr['Type'].'jpg','M'.$index,$spreadsheet->getActiveSheet());
     $worksheet->setCellValue('L'.$index , $arr['DimUp']);
     $worksheet->setCellValue('L'.($index+1) , $arr['DimMiddle']);
-    $worksheet->setCellValue('M'.($index+2) , $arr['DimLeft']);
-    $worksheet->setCellValue('N'.($index+2) , $arr['DimCenter']);
-    $worksheet->setCellValue('O'.($index+2) , $arr['DimRight']);
+    $worksheet->setCellValue('M'.($index+2) , $arr['dimCase1']);
+    $worksheet->setCellValue('N'.($index+2) , $arr['dimCase2']);
+    $worksheet->setCellValue('O'.($index+2) , $arr['dimCase3']);
+    $worksheet->setCellValue('P'.($index+2) , $arr['dimCase4']);
     //Add siils
     $CopyRows->addSillImage('../'.$arr['Sills'],$arr['Sills'],'I'.($index+1),$spreadsheet->getActiveSheet());
     $worksheet->setCellValue('I'.$index , $arr['SillUp']);
     $worksheet->setCellValue('I'.($index+2) , $arr['SillDown']);
     $worksheet->setCellValue('H'.($index+1) , $arr['SillLeft']);
     $worksheet->setCellValue('J'.($index+1) , $arr['SillRight']);
-
-	$index=$index+3;
-}
+   
+    $index=$index+3;
+    if ($counter % 5 == 0 && $counter <7){
+        $worksheet->setBreak('A'.($index+2), \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet::BREAK_ROW);
+        }elseif(($counter-5)%7 ==0){
+            $worksheet->setBreak('A'.($index+2), \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet::BREAK_ROW);
+        }
+    }
 }
 header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
 header('Content-Disposition: attachment;filename="myfile.xlsx"'); /*-- $filename is  xsl filename ---*/

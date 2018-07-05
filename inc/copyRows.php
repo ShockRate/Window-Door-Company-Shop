@@ -123,11 +123,19 @@ function copyRange( Worksheet $sheet, $srcRange, $dstCell) {
     }
 }
 function productWIdth($class){
-    if ( $class == 2 || $class == 6){}
+    if (in_array($class, array(2,6,7,11,12,))){
+        $width = 100;
+    }elseif (in_array($class, array(1,4,5))){
+        $width = 75;
+    }elseif (in_array($class, array(3,8,9,13,14))){
+        $width = 150;
+    } else {
+        $width = 180; 
+    }
     return $width;
 }
 //ADDS PRODUCT IMAGE TO EXCEL 
-public function addImage($path,$name,$coordinates,$sheet){
+public function addImage($class,$path,$name,$coordinates,$sheet){
                     $drawing = new \PhpOffice\PhpSpreadsheet\Worksheet\Drawing();
                     $drawing->setPath($path);
                     $drawing->setName($name);
@@ -136,7 +144,7 @@ public function addImage($path,$name,$coordinates,$sheet){
                     $drawing->setOffsetY(10);
                     $drawing->setResizeProportional(false);
                     $drawing->setHeight(100);
-                    $drawing->setWidth(150);
+                    $drawing->setWidth($this->productWIdth($class));
                     $drawing->setWorksheet($sheet);
 }
 //ADDS SILLS IMAGE TO EXCEL

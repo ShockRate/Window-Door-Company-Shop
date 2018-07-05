@@ -126,13 +126,13 @@ if (isset($newItem)) {
                      "Color"        =>  $_SESSION['order']['Color'],
                      "Glazzing"     =>  $_SESSION['order']['GLazzing'],
                      "Series"       =>  $_SESSION['order']['Series'],
-                     "DimLeft"      => "",
-                     "DimCenter"    => "",
-                     "DimRight"     => "",
+                     "dimCase1"     => "",
+                     "dimCase2"     => "",
+                     "dimCase3"     => "",
+                     "dimCase4"     => "",
+                     "dimCase5"     => "",                   
                      "DimUp"        => "",
-                     "DimMiddle"    => "",
-                     "DimCentLeft"  => "",
-                     "DimCentRight" => ""
+                     "DimMiddle"    => ""
 
 
                     
@@ -213,10 +213,7 @@ if (isset($newItem)) {
   <div style="text-align: center;">
                     <button type="button" class="btn btn-warning" id="clearTable">CLEAR THE ORDER</button>
                     <br>
-                    <br>
-                    <button type="button" class="btn btn-warning" id="btn-test">TEST THE FUNCTION</button>
-                    <div id="result"> 
-                   </div>
+                    
     </div>
     <br>
      <form method="post" action="inc/download.php">

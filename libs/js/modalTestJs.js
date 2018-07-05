@@ -65,13 +65,15 @@ $('#updateOrder').click(function() {
     var valClearWidth = $('#detailsClearWidth').val();
     var valClearHeight = $('#detailsClearHeight').val();
 
-    var valdimCenter = $('#dimCenter').val();
-    var valdimRight = $('#dimRight').val();
-    var valdimLeft = $('#dimLeft').val();
+    var valdimCase1 = $('#dimCase1').val();
+    var valdimCase2 = $('#dimCase2').val();   
+    var valdimCase3 = $('#dimCase3').val();
+    var valdimCase4 = $('#dimCase4').val();
+    var valdimCase5 = $('#dimCase5').val();   
     var valdimUp = $('#dimUp').val();
     var valdimMiddle = $('#dimMiddle').val();
-    var valdimCentRight = $('#dimCentRight').val();
-    var valdimCentLeft = $('#dimCentLeft').val();
+    
+   
 
     $.ajax({
         type: 'POST',
@@ -85,14 +87,16 @@ $('#updateOrder').click(function() {
                 width: valWidth,
                 height: valHeight,
                 clearWidth: valClearWidth,
-                clearHeight: valClearHeight,
-                dimCenter: valdimCenter, 
-                dimLeft: valdimLeft, 
-                dimRight: valdimRight,
+                clearHeight: valClearHeight,               
+                dimCase1: valdimCase1, 
+                dimCase2: valdimCase2,
+                dimCase3: valdimCase3,
+                dimCase4: valdimCase4,
+                dimCase5: valdimCase5,
                 dimUp: valdimUp, 
-                dimMiddle: valdimMiddle, 
-                dimCentRight: valdimCentRight, 
-                dimCentLeft: valdimCentLeft},
+                dimMiddle: valdimMiddle 
+                
+               },
         success: function(response) {
             //$('#result1').html(response);
             
@@ -422,36 +426,4 @@ function HeightConverter() {
     document.getElementById("height").value=result.toFixed(2);;
 }
 
-$('#btn-test').click(function(){
-    // This have to be the ID of your table, not the tag
-     
-
-    //get the div content
-    div_content = document.querySelectorAll('.table-builder');
-    
-    //make it as html5 canvas
-    html2canvas(div_content[0]).then(function(canvas) {
-        //change the canvas to jpeg image
-        data = canvas.toDataURL('image/jpeg');
-        
-        //then call a super hero php to save the image
-        save_img(data);
-    });
-});
-
-function save_img(data){
-    //ajax method.
-    $.post('save_jpg.php', {data: data}, function(res){
-        //if the file saved properly, trigger a popup to the user.
-        if(res != ''){
-            yes = confirm('File saved in output folder, click ok to see it!');
-            if(yes){
-                location.href =document.URL+'output/'+res+'.jpg';
-            }
-        }
-        else{
-            alert('something wrong');
-        }
-    });
-}
 

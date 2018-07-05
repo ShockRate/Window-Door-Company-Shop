@@ -37,7 +37,7 @@ echo $series;
 				  
 				    <td class="table-cell"><?php //include 'views/builder/idxDualAction.php';
 				    			//echo $tableBuilder->printImg($arr['Type'],$arr['Class'],$arr['Width'],$arr['Height']);
-				    			echo $tableBuilder->_printImg($arr['Type'],$arr['Class'],$arr['DimLeft'],$arr['DimCenter'],$arr['DimRight'],$arr['DimUp'],$arr['DimMiddle'],$arr['DimCentLeft'],$arr['DimCentRight']);
+				    			echo $tableBuilder->_printImg($arr['Type'],$arr['Class'],$arr['dimCase1'],$arr['dimCase3'],$arr['dimCase5'],$arr['DimUp'],$arr['DimMiddle'],$arr['dimCase2'],$arr['dimCase4']);
 				    			?></td>
 				    <td><?php echo ($arr['Width'] - $arr['SillLeft'] - $arr['SillRight']).'/<br>'.($arr['Height'] - $arr['SillUp'] - $arr['SillDown']);?></td>
 				    <td><?php echo $arr['Profile'];?></td>

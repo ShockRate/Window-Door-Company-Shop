@@ -73,7 +73,7 @@
 }
 
 .builder-right input {
-	width: 30%;
+	width: 40%;
 	display: flex;
 	margin-bottom: 10%;
 }
@@ -160,7 +160,8 @@
 	width: 70%;
 	display: flex;
 	/*margin-left: 15%;*/
-    margin-right: 15%;	
+	margin-right: 50%;
+	background-color: yellow;	
 }
 
 .table-dim-top-right{
@@ -173,7 +174,7 @@
 .table-dim-top-right span {
 	width: 85%;
 	display: flex;
-	margin-left: 15%;
-    margin-right: 15%;	
+	margin-left: 50%;
+    margin-right: 25%;	
    background-color: yellow;
 }
