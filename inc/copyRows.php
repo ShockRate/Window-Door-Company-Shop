@@ -155,6 +155,7 @@ public function addSillImage($path,$name,$coordinates,$sheet){
                     $drawing->setCoordinates($coordinates);
                     $drawing->setOffsetX(2);
                     $drawing->setOffsetY(2);
+                    $drawing->setHeight(85);
                     $drawing->setWorksheet($sheet);
 }
 }

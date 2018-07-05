@@ -10,8 +10,8 @@
       </div>
       <div class="modal-body">
        <!-- <form method="post" action="index.php">  -->
-        <p><input type="hidden" id="sillIndex" name="sillIndex"></p>
-         <p><input type="hidden" id="sillsImageSrc" name="sillsImageSrc"></p>
+        <p><input type="text" id="sillIndex" name="sillIndex"></p>
+         <p><input type="text" id="sillsImageSrc" name="sillsImageSrc"></p>
          
         
           

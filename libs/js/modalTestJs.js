@@ -192,7 +192,7 @@ $('#changeSillsbutton').click(function() {
         type: 'POST',
         url: 'inc/setSills.php',
         data: { sillIndex: index, 
-                sillsImageSrc: imgSource, 
+                sillsImageSrc: imgSourceStr, 
                 sillLeft: inputLeft,
                 sillRight: inputRight,
                 sillUp: inputUp,
@@ -216,37 +216,37 @@ function changePic() {
         var imgsrc;
 
         if (chkUp.checked == true && chkDown.checked == false && chkRight.checked == false && chkLeft.checked == false){
-            imgsrc = "images/shifts/U.png";
+            imgsrc = "images/shifts/U.gif";
         } else if (chkUp.checked == false && chkDown.checked == true && chkRight.checked == false && chkLeft.checked == false) {           
-            imgsrc = "images/shifts/D.png";
+            imgsrc = "images/shifts/D.gif";
         } else if (chkUp.checked == false && chkDown.checked == false && chkRight.checked == true && chkLeft.checked == false) {
-            imgsrc = "images/shifts/R.png";
+            imgsrc = "images/shifts/R.gif";
         } else if (chkUp.checked == false && chkDown.checked == false && chkRight.checked == false && chkLeft.checked == true) {
-            imgsrc = "images/shifts/L.png";
+            imgsrc = "images/shifts/L.gif";
         } else if (chkUp.checked == true && chkDown.checked == true && chkRight.checked == false && chkLeft.checked == false) {
-            imgsrc = "images/shifts/UD.png";
+            imgsrc = "images/shifts/UD.gif";
         } else if (chkUp.checked == false && chkDown.checked == false && chkRight.checked == true && chkLeft.checked == true) {
-            imgsrc = "images/shifts/LR.png";
+            imgsrc = "images/shifts/LR.gif";
         } else if (chkUp.checked == true && chkDown.checked == false && chkRight.checked == false && chkLeft.checked == true) {
-            imgsrc = "images/shifts/UL.png";
+            imgsrc = "images/shifts/UL.gif";
         } else if (chkUp.checked == true && chkDown.checked == false && chkRight.checked == true && chkLeft.checked == false) {
-            imgsrc = "images/shifts/UR.png";
+            imgsrc = "images/shifts/UR.gif";
         } else if (chkUp.checked == false && chkDown.checked == true && chkRight.checked == true && chkLeft.checked == false) {
-            imgsrc = "images/shifts/DR.png";
+            imgsrc = "images/shifts/DR.gif";
         } else if (chkUp.checked == false && chkDown.checked == true && chkRight.checked == false && chkLeft.checked == true) {
-            imgsrc = "images/shifts/DL.png";
+            imgsrc = "images/shifts/DL.gif";
         } else if (chkUp.checked == true && chkDown.checked == false && chkRight.checked == true && chkLeft.checked == true) {
-            imgsrc = "images/shifts/ULR.png";
+            imgsrc = "images/shifts/ULR.gif";
         } else if (chkUp.checked == false && chkDown.checked == true && chkRight.checked == true && chkLeft.checked == true) {
-            imgsrc = "images/shifts/DLR.png";
+            imgsrc = "images/shifts/DLR.gif";
         } else if (chkUp.checked == true && chkDown.checked == true && chkRight.checked == true && chkLeft.checked == false) {
-            imgsrc = "images/shifts/UDR.png";
+            imgsrc = "images/shifts/UDR.gif";
         } else if (chkUp.checked == true && chkDown.checked == true && chkRight.checked == false && chkLeft.checked == true) {
-            imgsrc = "images/shifts/UDL.png";
+            imgsrc = "images/shifts/UDL.gif";
         } else if (chkUp.checked == true && chkDown.checked == true && chkRight.checked == true && chkLeft.checked == true) {
-            imgsrc = "images/shifts/UDLR.png";
+            imgsrc = "images/shifts/UDLR.gif";
         } else {
-           imgsrc = "images/shifts/without.png";
+           imgsrc = "images/shifts/without.gif";
         }
         img.src = imgsrc;
         text.value = imgsrc;
@@ -299,82 +299,82 @@ function mySills(imgurl){
     var chkRight = document.getElementById("checkRight");
     var imgsrc = imgurl;
 
-    if (imgsrc == "images/shifts/U.png"){
+    if (imgsrc == "images/shifts/U.gif"){
        chkUp.checked = true;
        chkDown.checked = false;
        chkLeft.checked = false;
        chkRight.checked = false;         
-    } else if (imgsrc == "images/shifts/D.png"){
+    } else if (imgsrc == "images/shifts/D.gif"){
         chkUp.checked = false;
         chkDown.checked = true;
         chkLeft.checked = false;
         chkRight.checked = false;   
-    }else if (imgsrc == "images/shifts/L.png"){
+    }else if (imgsrc == "images/shifts/L.gif"){
         chkUp.checked = false;
         chkDown.checked = false;
         chkLeft.checked = true;
         chkRight.checked = false;   
-    }else if (imgsrc == "images/shifts/R.png"){
+    }else if (imgsrc == "images/shifts/R.gif"){
         chkUp.checked = false;
         chkDown.checked = false;
         chkLeft.checked = false;
         chkRight.checked = true;   
-    }else if (imgsrc == "images/shifts/UD.png"){
+    }else if (imgsrc == "images/shifts/UD.gif"){
         chkUp.checked = true;
         chkDown.checked = true;
         chkLeft.checked = false;
         chkRight.checked = false;   
-    }else if (imgsrc == "images/shifts/LR.png"){
+    }else if (imgsrc == "images/shifts/LR.gif"){
         chkUp.checked = false;
         chkDown.checked = false;
         chkLeft.checked = true;
         chkRight.checked = true;   
-    }else if (imgsrc == "images/shifts/UL.png"){
+    }else if (imgsrc == "images/shifts/UL.gif"){
         chkUp.checked = true;
         chkDown.checked = false;
         chkLeft.checked = true;
         chkRight.checked = false;   
-    }else if (imgsrc == "images/shifts/UR.png"){
+    }else if (imgsrc == "images/shifts/UR.gif"){
         chkUp.checked = true;
         chkDown.checked = false;
         chkLeft.checked = false;
         chkRight.checked = true;   
-    }else if (imgsrc == "images/shifts/DL.png"){
+    }else if (imgsrc == "images/shifts/DL.gif"){
         chkUp.checked = false;
         chkDown.checked = true;
         chkLeft.checked = true;
         chkRight.checked = false;   
-    }else if (imgsrc == "images/shifts/DR.png"){
+    }else if (imgsrc == "images/shifts/DR.gif"){
         chkUp.checked = false;
         chkDown.checked = true;
         chkLeft.checked = false;
         chkRight.checked = true;   
-    }else if (imgsrc == "images/shifts/UDL.png"){
+    }else if (imgsrc == "images/shifts/UDL.gif"){
         chkUp.checked = true;
         chkDown.checked = true;
         chkLeft.checked = true;
         chkRight.checked = false;   
-    }else if (imgsrc == "images/shifts/UDR.png"){
+    }else if (imgsrc == "images/shifts/UDR.gif"){
         chkUp.checked = true;
         chkDown.checked = true;
         chkLeft.checked = false;
         chkRight.checked = true;   
-    }else if (imgsrc == "images/shifts/ULR.png"){
+    }else if (imgsrc == "images/shifts/ULR.gif"){
         chkUp.checked = true;
         chkDown.checked = false;
         chkLeft.checked = true;
         chkRight.checked = true;   
-    }else if (imgsrc == "images/shifts/DLR.png"){
+    }else if (imgsrc == "images/shifts/DLR.gif"){
         chkUp.checked = false;
         chkDown.checked = true;
         chkLeft.checked = true;
         chkRight.checked = true;   
-    }else if (imgsrc == "images/shifts/UDLR.png"){
+    }else if (imgsrc == "images/shifts/UDLR.gif"){
         chkUp.checked = true;
         chkDown.checked = true;
         chkLeft.checked = true;
         chkRight.checked = true;
-    }else if (imgsrc == "images/shifts/without.png"){
+    }else if (imgsrc == "images/shifts/without.gif"){
         chkUp.checked = false;
         chkDown.checked = false;
         chkLeft.checked = false;
