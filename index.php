@@ -80,7 +80,7 @@ if(isset($newOrder)){
 
     $_SESSION['order'] = array(
             "ID"        => time(),
-            "Series"    =>$_POST['series'], 
+            "Series"    => $_POST['series'], 
             "Glazzing"  => $_POST['glazzing'], 
             "Color"     => $_POST['color']
 
@@ -90,7 +90,7 @@ if(isset($newOrder)){
      echo $_SESSION['order']['Glazzing'];
      echo $_SESSION['order']['Color'];
 
-      header("Location: index.php"); 
+    header("Location: index.php"); 
 
 }
 
@@ -143,10 +143,7 @@ if (isset($newItem)) {
             }
 
 
-    if (isset($newSills)) {
-        $_SESSION['Cart'][$_POST['sillIndex']]["Sills"]=$_POST['sillsImageSrc'];
-
-    }           
+       
             
     
 ?>

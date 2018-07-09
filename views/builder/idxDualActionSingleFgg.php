@@ -1,6 +1,6 @@
            <div class="table-container">
               <div>
-                <div>
+                <div class="img-product">
                   <img src="./images/_imgSrc.jpg" alt="_imgSrc" width="106" height="128">
                 </div>
                 <div class="table-dim-top">

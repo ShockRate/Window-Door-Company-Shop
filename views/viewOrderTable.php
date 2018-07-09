@@ -45,14 +45,16 @@ echo $series;
 				    <td><?php echo $arr['Screens'];?></td>
 				    <td></td>
 				    <td><?php echo $arr['DetailsNotes'];?></td>
-				    <td><div style="text-align: center;">
+				    <td>
   						<button class="btn myDetailsBtn">ΛΕΠΤΟΜΕΡΙΕΣ</button>
-						</div>
-					</td>
-				  </tr>
-					<?php } 
-				}?>
-				  
+						</td>
+						<td>
+							<button class="btn btn-danger btn-sm deleteBtn">ΔΙΑΓΡΑΦΗ</button>
+						</td>
+						</tr>
+						<?php } 
+					}?>
+						
 				 
 				</table>
 				<br>

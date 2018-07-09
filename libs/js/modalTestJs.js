@@ -1,18 +1,18 @@
-$(document).ready(function(){
-    $(".img-product").click(function(){
-        var imgsrc = $(this).closest('tr').children()[6].getElementsByTagName("img")[0].getAttributeNode("src").value;
+// $(document).ready(function(){
+//     $(".img-product").click(function(){
+//         var imgsrc = $(this).closest('tr').children()[6].getElementsByTagName("img")[0].getAttributeNode("src").value;
     
-        alert(imgsrc+" "+ $(this).closest('tr').children()[2].textContent);
+//         alert(imgsrc+" "+ $(this).closest('tr').children()[2].textContent);
        
-    });
-});
+//     });
+// });
 
 $('.myBtn').on('click',function(){
      $("#myTestModal").modal("show");
     });
 
 //OPEN DETAILS MODAL
-$('.myDetailsBtn').on('click',function(){
+$('.myDetailsBtn, .img-product').on('click',function(){
 
     var imgsrc = $(this).closest('tr').children()[6].getElementsByTagName("img")[0].getAttributeNode("src").value; 
     var index  = $(this).closest('tr').children()[0].textContent;
@@ -107,21 +107,7 @@ $('#updateOrder').click(function() {
 
 });   
 
-//FUNCTION RESPOSIBLE FOR CHANGING IMAGE WHEN CHOSING PRODUCT
-// function WhatToDo() {
-//    var rButtons = document.getElementsByName('productType');
-//    var rName = document.getElementsByName('productTypeName');
-//    var rImageName = '';
-//     for (var i = 0; i < rButtons.length; i++) {
-//     if (rButtons[i].checked) { 
-//         // alert(rButtons[i].value);
 
-//         rImageName = rImageName.concat(rButtons[i].value);
-//     }
-//     document.getElementById('productImage').src='images/'+ rImageName +'.jpg';
-//     document.getElementById('productName').textContent= rName;
-//     }
-// }
 function WhatToDo() {
    var rButtons = document.getElementsByName('productType');
    var rType = document.getElementsByName('productRadioName');
@@ -146,6 +132,26 @@ function WhatToDo() {
     
 }
 
+// DELETE WINDOW
+$('.deleteBtn').on('click',function(){
+    var index  = $(this).closest('tr').children()[0].textContent;
+    var name  = $(this).closest('tr').children()[2].textContent;
+    if(confirm('ΘΕΛΕΤΕ ΣΙΓΟΥΡΑ ΝΑ ΔΙΑΓΡΑΨΕΤΕ ΤΗΝ ΚΑΤΑΣΚΕΥΗ ?'+name)){
+        $.ajax({
+            type: 'POST',
+            url: 'inc/deleteWindow.php',
+            data: { windowIndex: index  },
+            error: function() {
+                alert('Something is wrong');
+             },
+            success: function(response) {
+                //$('#result1').html(response);
+                
+            }
+        
+        });
+    }
+});
 
 // EMPTY THE ORDER TABLE
 $("#clearTable").click(function(){
@@ -201,7 +207,7 @@ $('#changeSillsbutton').click(function() {
             //$('#result1').html(response);
         }
     });
- $('t01 tr:eq(val1) td:eq(5)').html($('#sillsImage').val());
+ $('t01 tr:eq(index) td:eq(5)').html($('#sillsImage').val());
 
 });
 
@@ -272,23 +278,6 @@ function changePic() {
             $("#inputLeft").val(2.5);}
 
 }
-
-// $('#testbutton1').click(function() {   
-//     var val1 = $('#text1').val();
-//     var val2 = $('#text2').val();
-//     $.ajax({
-//         type: 'POST',
-//         url: 'process.php',
-//         data: { text1: val1, text2: val2 },
-//         success: function(response) {
-//             $('#result1').html(response);
-//         }
-//     });
-// });
-
-
-
-
 
 
 function mySills(imgurl){

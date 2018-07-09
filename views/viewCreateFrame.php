@@ -144,7 +144,7 @@
                   </div> <!-- panel-body fbody -->
                 </div>
                 <div id="doors" class="tab-pane fade"><br>
-                  <h3>Doors</h3>
+                  <h3>Main Entrances</h3>
                   <div class="panel-body">
                     <?php for ($row = 37;$row <= $typesWorksheet->getHighestRow('B'); ++ $row) { 
                       $vartype =$typesWorksheet->getCellByColumnAndRow('2',"$row")->getValue();

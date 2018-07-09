@@ -4,7 +4,7 @@
                 
               
           
-                <div>
+                <div class="img-product">
                   <img src="./images/_imgSrc.jpg" alt="_imgSrc" width="159" height="128">
                 </div>
                 <div class="table-dim-top">

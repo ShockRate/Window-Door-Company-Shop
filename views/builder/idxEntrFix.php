@@ -3,7 +3,7 @@
               <div>
                 
               
-              <div>
+              <div class="img-product">
                 <img src="./images/_imgSrc.jpg" alt="_imgSrc.jpg" width="106" height="117">
               </div>
               <div class="table-dim-top-right">
