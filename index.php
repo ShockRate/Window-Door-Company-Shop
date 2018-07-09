@@ -113,7 +113,7 @@ if (isset($newItem)) {
                      "Height"       => $item->getHeight(),
                      "ClearWidth"   => $item->getWidth()-5,
                      "ClearHeight"  => $item->getHeight()-5,
-                     "Sills"        => "images/shifts/Small/UDLR.png",
+                     "Sills"        => "images/shifts/UDLR.png",
                      "Profile"      => "",
                      "Shutters"     => "",
                      "Screens"      => "",
