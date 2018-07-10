@@ -9,10 +9,10 @@
 	$detailsNotes  	= $_POST['detailsNotes'];
 	$pieces  		= $_POST['pieces'];
 
-	$width			=$_POST['width'];
-	$height			=$_POST['height'];
-	$clearWidth		=$_POST['clearWidth'];
-	$clearHeight	=$_POST['clearHeight'];
+	$width			= $_POST['width'];
+	$height			= $_POST['height'];
+	$clearWidth		= $_POST['clearWidth'];
+	$clearHeight	= $_POST['clearHeight'];
 
 	
 	$dimCase1  		= $_POST['dimCase1'];

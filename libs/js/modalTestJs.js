@@ -12,7 +12,7 @@ $('.myBtn').on('click',function(){
     });
 
 //OPEN DETAILS MODAL
-$('.myDetailsBtn, .img-product').on('click',function(){
+$('.myDetailsBtn').on('click',function(){
 
     var imgsrc = $(this).closest('tr').children()[6].getElementsByTagName("img")[0].getAttributeNode("src").value; 
     var index  = $(this).closest('tr').children()[0].textContent;
@@ -21,7 +21,7 @@ $('.myDetailsBtn, .img-product').on('click',function(){
     $("#type").html($(this).closest('tr').children()[2].textContent);
     $("#pieces").val($(this).closest('tr').children()[3].textContent);
     $("#detailsWidthAndHeight").val($(this).closest('tr').children()[4].textContent); 
-    //$("#imgDetail").html($(this).closest('tr').children()[6].innerHTML);  
+      
     var imgsrc = $(this).closest('tr').children()[6].getElementsByTagName("img")[0].getAttributeNode("src").value;        
     $('#imgDetail').attr('src', imgsrc);
 
@@ -51,7 +51,7 @@ $('.myDetailsBtn, .img-product').on('click',function(){
 });
 
 
-
+//ΕΝΗΜΕΡΩΣΗ ΠΑΡΑΓΓΕΛΙΑΣ
 $('#updateOrder').click(function() {   
     var valIndex = $('#windowIndex').val();
     var valShutters = $('#shutters').val();
@@ -73,8 +73,14 @@ $('#updateOrder').click(function() {
     var valdimUp = $('#dimUp').val();
     var valdimMiddle = $('#dimMiddle').val();
     
-   
+    var valdimWidth = (parseInt(valdimCase1)||0)+(parseInt(valdimCase2)||0)+(parseInt(valdimCase3)||0)+(parseInt(valdimCase4)||0)+(parseInt(valdimCase5)||0);
+    var valdimHeight = (parseInt(valdimUp)||0)+(parseInt(valdimMiddle)||0);
 
+   if (valdimWidth > valClearWidth) {
+        alert("ΛΑΝΘΑΣΜΕΝΑ ΦΑΡΔΗ");     
+   } else if(valdimHeight > valClearHeight) {
+        alert("ΛΑΝΘΑΣΜΕΝΑ ΥΨΗ"); 
+   } else {
     $.ajax({
         type: 'POST',
         url: 'inc/updateDetails.php',
@@ -98,12 +104,18 @@ $('#updateOrder').click(function() {
                 
                },
         success: function(response) {
-            //$('#result1').html(response);
+            alert("ΣΩΣΤΗ ΕΝΗΜΕΡΩΣΗ");
+            $("#t01 tr:eq(valIndex) td:eq(10)").val("testing...");
+            $('#result1').val(valdimWidth);
+            $('#result2').val(valdimHeight);
+            //location.reload();
             
         }
     });
- $('t01 tr:eq(val0) td:eq(8)').val(val3);
- location.reload(true);
+   }
+    
+ 
+ 
 
 });   
 
@@ -145,7 +157,10 @@ $('.deleteBtn').on('click',function(){
                 alert('Something is wrong');
              },
             success: function(response) {
-                //$('#result1').html(response);
+                
+                $("#tableEntry"+index).remove();
+                //alert("Record removed successfully");
+                //location.reload();  
                 
             }
         
@@ -157,8 +172,9 @@ $('.deleteBtn').on('click',function(){
 $("#clearTable").click(function(){
         $.post("inc/emptySession.php",function(data){
         // if you want you can show some message to user here
-     });
         location.reload();
+     });
+        
 });
 
 //OPEN SILLS MODAL
@@ -171,9 +187,7 @@ $('.openSillsModal').on('click',function(){
     $("#inputRight").val($(this).closest('tr').children()[2].textContent);
     $("#inputUp").val($(this).closest('tr').prev().children()[1].textContent);
     $("#inputDown").val($(this).closest('tr').next().children()[1].textContent);
-
     
-
     $('#windowsill').modal("show");
     
     var imgsrcStr = $(this).attr('src');
@@ -386,11 +400,6 @@ function openTab(evt, metricsType) {
     document.getElementById(metricsType).style.display = "block";
     evt.currentTarget.className += " active";
 
-    // if (metricsType=="tab-meters") {
-    //    $("#metrics").val("meters");
-    // } else {
-    //     $("#metrics").val("feet");
-    // }
 
 }
 

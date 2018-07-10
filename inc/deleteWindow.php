@@ -2,7 +2,6 @@
 session_start();
 
 $windowIndex  = $_POST['windowIndex'] -1;
-unset($_SESSION['Cart'][$windowIndex]);
-
+array_splice($_SESSION['Cart'],$windowIndex,1);
 header("Location: index.php"); 
 ?>

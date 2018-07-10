@@ -206,6 +206,9 @@ if (isset($newItem)) {
         }
  
   ?> 
+  <!-- TESTING CODE-->
+  
+  <!--END OF TESTIGN CODE -->
   <br>
   <div style="text-align: center;">
                     <button type="button" class="btn btn-warning" id="clearTable">CLEAR THE ORDER</button>

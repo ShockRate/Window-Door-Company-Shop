@@ -47,7 +47,8 @@ foreach ($_SESSION['Cart'] as $arr) {
     $worksheet->setCellValue('I'.($index+2) , $arr['SillDown']);
     $worksheet->setCellValue('H'.($index+1) , $arr['SillLeft']);
     $worksheet->setCellValue('J'.($index+1) , $arr['SillRight']);
-   
+    //Details 
+    $worksheet->setCellValue('W'.($index) , $arr['DetailsNotes']);
     $index=$index+3;
     if ($counter % 5 == 0 && $counter <7){
         $worksheet->setBreak('A'.($index+2), \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet::BREAK_ROW);

@@ -49,8 +49,7 @@
                    <div id="dimensionsSet">                                  
                    </div>                  
                   <br>
-                   <div id="result1"> 
-                   </div>   
+                  
                                  
                 </div>  
 </div>
@@ -104,7 +103,7 @@
 
       <div class="modal-footer" >
         <button type="button" class="btn btn-default" id="closeModal" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="updateOrder" data-dismiss="modal">Update</button>
+        <button type="button" class="btn btn-primary" id="updateOrder" >Update</button>
       </div><!-- /.modal-footer -->
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
