@@ -80,7 +80,7 @@ if(isset($newOrder)){
 
     $_SESSION['order'] = array(
             "ID"        => time(),
-            "Series"    =>$_POST['series'], 
+            "Series"    => $_POST['series'], 
             "Glazzing"  => $_POST['glazzing'], 
             "Color"     => $_POST['color']
 
@@ -90,7 +90,7 @@ if(isset($newOrder)){
      echo $_SESSION['order']['Glazzing'];
      echo $_SESSION['order']['Color'];
 
-      header("Location: index.php"); 
+    header("Location: index.php"); 
 
 }
 
@@ -113,7 +113,7 @@ if (isset($newItem)) {
                      "Height"       => $item->getHeight(),
                      "ClearWidth"   => $item->getWidth()-5,
                      "ClearHeight"  => $item->getHeight()-5,
-                     "Sills"        => "images/shifts/Small/UDLR.png",
+                     "Sills"        => "images/shifts/UDLR.png",
                      "Profile"      => "",
                      "Shutters"     => "",
                      "Screens"      => "",
@@ -126,13 +126,13 @@ if (isset($newItem)) {
                      "Color"        =>  $_SESSION['order']['Color'],
                      "Glazzing"     =>  $_SESSION['order']['GLazzing'],
                      "Series"       =>  $_SESSION['order']['Series'],
-                     "DimLeft"      => "",
-                     "DimCenter"    => "",
-                     "DimRight"     => "",
+                     "dimCase1"     => "",
+                     "dimCase2"     => "",
+                     "dimCase3"     => "",
+                     "dimCase4"     => "",
+                     "dimCase5"     => "",                   
                      "DimUp"        => "",
-                     "DimMiddle"    => "",
-                     "DimCentLeft"  => "",
-                     "DimCentRight" => ""
+                     "DimMiddle"    => ""
 
 
                     
@@ -143,10 +143,7 @@ if (isset($newItem)) {
             }
 
 
-    if (isset($newSills)) {
-        $_SESSION['Cart'][$_POST['sillIndex']]["Sills"]=$_POST['sillsImageSrc'];
-
-    }           
+       
             
     
 ?>
@@ -209,14 +206,14 @@ if (isset($newItem)) {
         }
  
   ?> 
+  <!-- TESTING CODE-->
+  
+  <!--END OF TESTIGN CODE -->
   <br>
   <div style="text-align: center;">
                     <button type="button" class="btn btn-warning" id="clearTable">CLEAR THE ORDER</button>
                     <br>
-                    <br>
-                    <button type="button" class="btn btn-warning" id="btn-test">TEST THE FUNCTION</button>
-                    <div id="result"> 
-                   </div>
+                    
     </div>
     <br>
      <form method="post" action="inc/download.php">

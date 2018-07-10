@@ -27,7 +27,7 @@ echo $series;
 				
 				  foreach ($_SESSION['Cart'] as $arr) { 
 				  	?>
-				  <tr>
+				  <tr id="tableEntry<?php echo $i;?>">
 				    <td><?php echo $i++;?></td>
 				    <td></td>
 				    <td><?php echo $arr['Name'];?></td>
@@ -35,9 +35,9 @@ echo $series;
 				    <td><?php echo $arr['Width'].'/<br>'.$arr['Height'];?></td>
 				    <td><?php include 'views/divSills.php';?></td>
 				  
-				    <td class="table-cell"><?php //include 'views/builder/idxDualAction.php';
-				    			//echo $tableBuilder->printImg($arr['Type'],$arr['Class'],$arr['Width'],$arr['Height']);
-				    			echo $tableBuilder->_printImg($arr['Type'],$arr['Class'],$arr['DimLeft'],$arr['DimCenter'],$arr['DimRight'],$arr['DimUp'],$arr['DimMiddle'],$arr['DimCentLeft'],$arr['DimCentRight']);
+				    <td class="table-cell">
+						<button class="btn myDetailsBtn">ΛΕΠΤΟΜΕΡΙΕΣ</button>
+						<?php echo $tableBuilder->_printImg($arr['Type'],$arr['Class'],$arr['dimCase1'],$arr['dimCase3'],$arr['dimCase5'],$arr['DimUp'],$arr['DimMiddle'],$arr['dimCase2'],$arr['dimCase4']);
 				    			?></td>
 				    <td><?php echo ($arr['Width'] - $arr['SillLeft'] - $arr['SillRight']).'/<br>'.($arr['Height'] - $arr['SillUp'] - $arr['SillDown']);?></td>
 				    <td><?php echo $arr['Profile'];?></td>
@@ -45,14 +45,16 @@ echo $series;
 				    <td><?php echo $arr['Screens'];?></td>
 				    <td></td>
 				    <td><?php echo $arr['DetailsNotes'];?></td>
-				    <td><div style="text-align: center;">
-  						<button class="btn myDetailsBtn">ΛΕΠΤΟΜΕΡΙΕΣ</button>
-						</div>
-					</td>
-				  </tr>
-					<?php } 
-				}?>
-				  
+				    <!-- <td>
+  						
+						</td> -->
+						<td>
+							<button class="btn btn-danger btn-sm deleteBtn">ΔΙΑΓΡΑΦΗ</button>
+						</td>
+						</tr>
+						<?php } 
+					}?>
+						
 				 
 				</table>
 				<br>

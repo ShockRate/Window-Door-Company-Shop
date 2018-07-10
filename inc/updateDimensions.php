@@ -2,20 +2,20 @@
 	session_start();
 
 	$windowIndex 	= $_POST['windowIndex'] -1;
- 	$dimRight  		= $_POST['dimRight'];
- 	$dimLeft  		= $_POST['dimLeft'];
- 	$dimCenter  	= $_POST['dimCenter'];
+ 	$dimCase5  		= $_POST['dimCase5'];
+ 	$dimCase1  		= $_POST['dimCase1'];
+ 	$dimCase3  	= $_POST['dimCase3'];
  	// $dimUp  		= $_POST['dimUp'];
  	// $dimMiddle  	= $_POST['dimMiddle'];
- 	// $dimCentRight  	= $_POST['dimCentRight'];
- 	// $dimCentLeft  	= $_POST['dimCentLeft'];
+ 	// $dimCase4  	= $_POST['dimCase4'];
+ 	// $dimCase2  	= $_POST['dimCase2'];
 	
 
-	$_SESSION['Cart'][$windowIndex]['DimRight']			=$dimRight;  		
- 	$_SESSION['Cart'][$windowIndex]['DimLeft']			=$dimLeft;  		
- 	$_SESSION['Cart'][$windowIndex]['DimCenter']		=$dimCenter;  	
+	$_SESSION['Cart'][$windowIndex]['dimCase5']			=$dimCase5;  		
+ 	$_SESSION['Cart'][$windowIndex]['dimCase1']			=$dimCase1;  		
+ 	$_SESSION['Cart'][$windowIndex]['dimCase3']		=$dimCase3;  	
  	// $_SESSION['Cart'][$windowIndex]['DimUp']			=$dimUp;  		
  	// $_SESSION['Cart'][$windowIndex]['DimMiddle']		=$dimMiddle;  	
- 	// $_SESSION['Cart'][$windowIndex]['DimCentRight']		=$dimCentRight;  	
- 	// $_SESSION['Cart'][$windowIndex]['DimCentLeft']		=$dimCentLeft;  	
+ 	// $_SESSION['Cart'][$windowIndex]['dimCase4']		=$dimCase4;  	
+ 	// $_SESSION['Cart'][$windowIndex]['dimCase2']		=$dimCase2;  	
 ?>

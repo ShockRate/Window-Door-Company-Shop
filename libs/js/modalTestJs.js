@@ -1,11 +1,11 @@
-$(document).ready(function(){
-    $(".img-product").click(function(){
-        var imgsrc = $(this).closest('tr').children()[6].getElementsByTagName("img")[0].getAttributeNode("src").value;
+// $(document).ready(function(){
+//     $(".img-product").click(function(){
+//         var imgsrc = $(this).closest('tr').children()[6].getElementsByTagName("img")[0].getAttributeNode("src").value;
     
-        alert(imgsrc+" "+ $(this).closest('tr').children()[2].textContent);
+//         alert(imgsrc+" "+ $(this).closest('tr').children()[2].textContent);
        
-    });
-});
+//     });
+// });
 
 $('.myBtn').on('click',function(){
      $("#myTestModal").modal("show");
@@ -21,7 +21,7 @@ $('.myDetailsBtn').on('click',function(){
     $("#type").html($(this).closest('tr').children()[2].textContent);
     $("#pieces").val($(this).closest('tr').children()[3].textContent);
     $("#detailsWidthAndHeight").val($(this).closest('tr').children()[4].textContent); 
-    //$("#imgDetail").html($(this).closest('tr').children()[6].innerHTML);  
+      
     var imgsrc = $(this).closest('tr').children()[6].getElementsByTagName("img")[0].getAttributeNode("src").value;        
     $('#imgDetail').attr('src', imgsrc);
 
@@ -51,7 +51,7 @@ $('.myDetailsBtn').on('click',function(){
 });
 
 
-
+//ΕΝΗΜΕΡΩΣΗ ΠΑΡΑΓΓΕΛΙΑΣ
 $('#updateOrder').click(function() {   
     var valIndex = $('#windowIndex').val();
     var valShutters = $('#shutters').val();
@@ -65,14 +65,22 @@ $('#updateOrder').click(function() {
     var valClearWidth = $('#detailsClearWidth').val();
     var valClearHeight = $('#detailsClearHeight').val();
 
-    var valdimCenter = $('#dimCenter').val();
-    var valdimRight = $('#dimRight').val();
-    var valdimLeft = $('#dimLeft').val();
+    var valdimCase1 = $('#dimCase1').val();
+    var valdimCase2 = $('#dimCase2').val();   
+    var valdimCase3 = $('#dimCase3').val();
+    var valdimCase4 = $('#dimCase4').val();
+    var valdimCase5 = $('#dimCase5').val();   
     var valdimUp = $('#dimUp').val();
     var valdimMiddle = $('#dimMiddle').val();
-    var valdimCentRight = $('#dimCentRight').val();
-    var valdimCentLeft = $('#dimCentLeft').val();
+    
+    var valdimWidth = (parseInt(valdimCase1)||0)+(parseInt(valdimCase2)||0)+(parseInt(valdimCase3)||0)+(parseInt(valdimCase4)||0)+(parseInt(valdimCase5)||0);
+    var valdimHeight = (parseInt(valdimUp)||0)+(parseInt(valdimMiddle)||0);
 
+   if (valdimWidth > valClearWidth) {
+        alert("ΛΑΝΘΑΣΜΕΝΑ ΦΑΡΔΗ");     
+   } else if(valdimHeight > valClearHeight) {
+        alert("ΛΑΝΘΑΣΜΕΝΑ ΥΨΗ"); 
+   } else {
     $.ajax({
         type: 'POST',
         url: 'inc/updateDetails.php',
@@ -85,39 +93,33 @@ $('#updateOrder').click(function() {
                 width: valWidth,
                 height: valHeight,
                 clearWidth: valClearWidth,
-                clearHeight: valClearHeight,
-                dimCenter: valdimCenter, 
-                dimLeft: valdimLeft, 
-                dimRight: valdimRight,
+                clearHeight: valClearHeight,               
+                dimCase1: valdimCase1, 
+                dimCase2: valdimCase2,
+                dimCase3: valdimCase3,
+                dimCase4: valdimCase4,
+                dimCase5: valdimCase5,
                 dimUp: valdimUp, 
-                dimMiddle: valdimMiddle, 
-                dimCentRight: valdimCentRight, 
-                dimCentLeft: valdimCentLeft},
+                dimMiddle: valdimMiddle 
+                
+               },
         success: function(response) {
-            //$('#result1').html(response);
+            alert("ΣΩΣΤΗ ΕΝΗΜΕΡΩΣΗ");
+            $("#t01 tr:eq(valIndex) td:eq(10)").val("testing...");
+            $('#result1').val(valdimWidth);
+            $('#result2').val(valdimHeight);
+            //location.reload();
             
         }
     });
- $('t01 tr:eq(val0) td:eq(8)').val(val3);
- location.reload(true);
+   }
+    
+ 
+ 
 
 });   
 
-//FUNCTION RESPOSIBLE FOR CHANGING IMAGE WHEN CHOSING PRODUCT
-// function WhatToDo() {
-//    var rButtons = document.getElementsByName('productType');
-//    var rName = document.getElementsByName('productTypeName');
-//    var rImageName = '';
-//     for (var i = 0; i < rButtons.length; i++) {
-//     if (rButtons[i].checked) { 
-//         // alert(rButtons[i].value);
 
-//         rImageName = rImageName.concat(rButtons[i].value);
-//     }
-//     document.getElementById('productImage').src='images/'+ rImageName +'.jpg';
-//     document.getElementById('productName').textContent= rName;
-//     }
-// }
 function WhatToDo() {
    var rButtons = document.getElementsByName('productType');
    var rType = document.getElementsByName('productRadioName');
@@ -142,13 +144,37 @@ function WhatToDo() {
     
 }
 
+// DELETE WINDOW
+$('.deleteBtn').on('click',function(){
+    var index  = $(this).closest('tr').children()[0].textContent;
+    var name  = $(this).closest('tr').children()[2].textContent;
+    if(confirm('ΘΕΛΕΤΕ ΣΙΓΟΥΡΑ ΝΑ ΔΙΑΓΡΑΨΕΤΕ ΤΗΝ ΚΑΤΑΣΚΕΥΗ ?'+name)){
+        $.ajax({
+            type: 'POST',
+            url: 'inc/deleteWindow.php',
+            data: { windowIndex: index  },
+            error: function() {
+                alert('Something is wrong');
+             },
+            success: function(response) {
+                
+                $("#tableEntry"+index).remove();
+                //alert("Record removed successfully");
+                //location.reload();  
+                
+            }
+        
+        });
+    }
+});
 
 // EMPTY THE ORDER TABLE
 $("#clearTable").click(function(){
         $.post("inc/emptySession.php",function(data){
         // if you want you can show some message to user here
-     });
         location.reload();
+     });
+        
 });
 
 //OPEN SILLS MODAL
@@ -161,9 +187,7 @@ $('.openSillsModal').on('click',function(){
     $("#inputRight").val($(this).closest('tr').children()[2].textContent);
     $("#inputUp").val($(this).closest('tr').prev().children()[1].textContent);
     $("#inputDown").val($(this).closest('tr').next().children()[1].textContent);
-
     
-
     $('#windowsill').modal("show");
     
     var imgsrcStr = $(this).attr('src');
@@ -188,7 +212,7 @@ $('#changeSillsbutton').click(function() {
         type: 'POST',
         url: 'inc/setSills.php',
         data: { sillIndex: index, 
-                sillsImageSrc: imgSource, 
+                sillsImageSrc: imgSourceStr, 
                 sillLeft: inputLeft,
                 sillRight: inputRight,
                 sillUp: inputUp,
@@ -197,7 +221,7 @@ $('#changeSillsbutton').click(function() {
             //$('#result1').html(response);
         }
     });
- $('t01 tr:eq(val1) td:eq(5)').html($('#sillsImage').val());
+ $('t01 tr:eq(index) td:eq(5)').html($('#sillsImage').val());
 
 });
 
@@ -212,37 +236,37 @@ function changePic() {
         var imgsrc;
 
         if (chkUp.checked == true && chkDown.checked == false && chkRight.checked == false && chkLeft.checked == false){
-            imgsrc = "images/shifts/U.png";
+            imgsrc = "images/shifts/U.gif";
         } else if (chkUp.checked == false && chkDown.checked == true && chkRight.checked == false && chkLeft.checked == false) {           
-            imgsrc = "images/shifts/D.png";
+            imgsrc = "images/shifts/D.gif";
         } else if (chkUp.checked == false && chkDown.checked == false && chkRight.checked == true && chkLeft.checked == false) {
-            imgsrc = "images/shifts/R.png";
+            imgsrc = "images/shifts/R.gif";
         } else if (chkUp.checked == false && chkDown.checked == false && chkRight.checked == false && chkLeft.checked == true) {
-            imgsrc = "images/shifts/L.png";
+            imgsrc = "images/shifts/L.gif";
         } else if (chkUp.checked == true && chkDown.checked == true && chkRight.checked == false && chkLeft.checked == false) {
-            imgsrc = "images/shifts/UD.png";
+            imgsrc = "images/shifts/UD.gif";
         } else if (chkUp.checked == false && chkDown.checked == false && chkRight.checked == true && chkLeft.checked == true) {
-            imgsrc = "images/shifts/LR.png";
+            imgsrc = "images/shifts/LR.gif";
         } else if (chkUp.checked == true && chkDown.checked == false && chkRight.checked == false && chkLeft.checked == true) {
-            imgsrc = "images/shifts/UL.png";
+            imgsrc = "images/shifts/UL.gif";
         } else if (chkUp.checked == true && chkDown.checked == false && chkRight.checked == true && chkLeft.checked == false) {
-            imgsrc = "images/shifts/UR.png";
+            imgsrc = "images/shifts/UR.gif";
         } else if (chkUp.checked == false && chkDown.checked == true && chkRight.checked == true && chkLeft.checked == false) {
-            imgsrc = "images/shifts/DR.png";
+            imgsrc = "images/shifts/DR.gif";
         } else if (chkUp.checked == false && chkDown.checked == true && chkRight.checked == false && chkLeft.checked == true) {
-            imgsrc = "images/shifts/DL.png";
+            imgsrc = "images/shifts/DL.gif";
         } else if (chkUp.checked == true && chkDown.checked == false && chkRight.checked == true && chkLeft.checked == true) {
-            imgsrc = "images/shifts/ULR.png";
+            imgsrc = "images/shifts/ULR.gif";
         } else if (chkUp.checked == false && chkDown.checked == true && chkRight.checked == true && chkLeft.checked == true) {
-            imgsrc = "images/shifts/DLR.png";
+            imgsrc = "images/shifts/DLR.gif";
         } else if (chkUp.checked == true && chkDown.checked == true && chkRight.checked == true && chkLeft.checked == false) {
-            imgsrc = "images/shifts/UDR.png";
+            imgsrc = "images/shifts/UDR.gif";
         } else if (chkUp.checked == true && chkDown.checked == true && chkRight.checked == false && chkLeft.checked == true) {
-            imgsrc = "images/shifts/UDL.png";
+            imgsrc = "images/shifts/UDL.gif";
         } else if (chkUp.checked == true && chkDown.checked == true && chkRight.checked == true && chkLeft.checked == true) {
-            imgsrc = "images/shifts/UDLR.png";
+            imgsrc = "images/shifts/UDLR.gif";
         } else {
-           imgsrc = "images/shifts/without.png";
+           imgsrc = "images/shifts/without.gif";
         }
         img.src = imgsrc;
         text.value = imgsrc;
@@ -269,23 +293,6 @@ function changePic() {
 
 }
 
-// $('#testbutton1').click(function() {   
-//     var val1 = $('#text1').val();
-//     var val2 = $('#text2').val();
-//     $.ajax({
-//         type: 'POST',
-//         url: 'process.php',
-//         data: { text1: val1, text2: val2 },
-//         success: function(response) {
-//             $('#result1').html(response);
-//         }
-//     });
-// });
-
-
-
-
-
 
 function mySills(imgurl){
 
@@ -295,82 +302,82 @@ function mySills(imgurl){
     var chkRight = document.getElementById("checkRight");
     var imgsrc = imgurl;
 
-    if (imgsrc == "images/shifts/U.png"){
+    if (imgsrc == "images/shifts/U.gif"){
        chkUp.checked = true;
        chkDown.checked = false;
        chkLeft.checked = false;
        chkRight.checked = false;         
-    } else if (imgsrc == "images/shifts/D.png"){
+    } else if (imgsrc == "images/shifts/D.gif"){
         chkUp.checked = false;
         chkDown.checked = true;
         chkLeft.checked = false;
         chkRight.checked = false;   
-    }else if (imgsrc == "images/shifts/L.png"){
+    }else if (imgsrc == "images/shifts/L.gif"){
         chkUp.checked = false;
         chkDown.checked = false;
         chkLeft.checked = true;
         chkRight.checked = false;   
-    }else if (imgsrc == "images/shifts/R.png"){
+    }else if (imgsrc == "images/shifts/R.gif"){
         chkUp.checked = false;
         chkDown.checked = false;
         chkLeft.checked = false;
         chkRight.checked = true;   
-    }else if (imgsrc == "images/shifts/UD.png"){
+    }else if (imgsrc == "images/shifts/UD.gif"){
         chkUp.checked = true;
         chkDown.checked = true;
         chkLeft.checked = false;
         chkRight.checked = false;   
-    }else if (imgsrc == "images/shifts/LR.png"){
+    }else if (imgsrc == "images/shifts/LR.gif"){
         chkUp.checked = false;
         chkDown.checked = false;
         chkLeft.checked = true;
         chkRight.checked = true;   
-    }else if (imgsrc == "images/shifts/UL.png"){
+    }else if (imgsrc == "images/shifts/UL.gif"){
         chkUp.checked = true;
         chkDown.checked = false;
         chkLeft.checked = true;
         chkRight.checked = false;   
-    }else if (imgsrc == "images/shifts/UR.png"){
+    }else if (imgsrc == "images/shifts/UR.gif"){
         chkUp.checked = true;
         chkDown.checked = false;
         chkLeft.checked = false;
         chkRight.checked = true;   
-    }else if (imgsrc == "images/shifts/DL.png"){
+    }else if (imgsrc == "images/shifts/DL.gif"){
         chkUp.checked = false;
         chkDown.checked = true;
         chkLeft.checked = true;
         chkRight.checked = false;   
-    }else if (imgsrc == "images/shifts/DR.png"){
+    }else if (imgsrc == "images/shifts/DR.gif"){
         chkUp.checked = false;
         chkDown.checked = true;
         chkLeft.checked = false;
         chkRight.checked = true;   
-    }else if (imgsrc == "images/shifts/UDL.png"){
+    }else if (imgsrc == "images/shifts/UDL.gif"){
         chkUp.checked = true;
         chkDown.checked = true;
         chkLeft.checked = true;
         chkRight.checked = false;   
-    }else if (imgsrc == "images/shifts/UDR.png"){
+    }else if (imgsrc == "images/shifts/UDR.gif"){
         chkUp.checked = true;
         chkDown.checked = true;
         chkLeft.checked = false;
         chkRight.checked = true;   
-    }else if (imgsrc == "images/shifts/ULR.png"){
+    }else if (imgsrc == "images/shifts/ULR.gif"){
         chkUp.checked = true;
         chkDown.checked = false;
         chkLeft.checked = true;
         chkRight.checked = true;   
-    }else if (imgsrc == "images/shifts/DLR.png"){
+    }else if (imgsrc == "images/shifts/DLR.gif"){
         chkUp.checked = false;
         chkDown.checked = true;
         chkLeft.checked = true;
         chkRight.checked = true;   
-    }else if (imgsrc == "images/shifts/UDLR.png"){
+    }else if (imgsrc == "images/shifts/UDLR.gif"){
         chkUp.checked = true;
         chkDown.checked = true;
         chkLeft.checked = true;
         chkRight.checked = true;
-    }else if (imgsrc == "images/shifts/without.png"){
+    }else if (imgsrc == "images/shifts/without.gif"){
         chkUp.checked = false;
         chkDown.checked = false;
         chkLeft.checked = false;
@@ -393,11 +400,6 @@ function openTab(evt, metricsType) {
     document.getElementById(metricsType).style.display = "block";
     evt.currentTarget.className += " active";
 
-    // if (metricsType=="tab-meters") {
-    //    $("#metrics").val("meters");
-    // } else {
-    //     $("#metrics").val("feet");
-    // }
 
 }
 
@@ -422,36 +424,4 @@ function HeightConverter() {
     document.getElementById("height").value=result.toFixed(2);;
 }
 
-$('#btn-test').click(function(){
-    // This have to be the ID of your table, not the tag
-     
-
-    //get the div content
-    div_content = document.querySelectorAll('.table-builder');
-    
-    //make it as html5 canvas
-    html2canvas(div_content[0]).then(function(canvas) {
-        //change the canvas to jpeg image
-        data = canvas.toDataURL('image/jpeg');
-        
-        //then call a super hero php to save the image
-        save_img(data);
-    });
-});
-
-function save_img(data){
-    //ajax method.
-    $.post('save_jpg.php', {data: data}, function(res){
-        //if the file saved properly, trigger a popup to the user.
-        if(res != ''){
-            yes = confirm('File saved in output folder, click ok to see it!');
-            if(yes){
-                location.href =document.URL+'output/'+res+'.jpg';
-            }
-        }
-        else{
-            alert('something wrong');
-        }
-    });
-}
 
