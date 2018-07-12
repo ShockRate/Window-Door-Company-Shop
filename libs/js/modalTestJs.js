@@ -6,6 +6,9 @@
        
 //     });
 // });
+function isset(myVar){
+    return myVar||0;
+}
 
 $('.myBtn').on('click',function(){
      $("#myTestModal").modal("show");
@@ -14,24 +17,21 @@ $('.myBtn').on('click',function(){
 //OPEN DETAILS MODAL
 $('.myDetailsBtn').on('click',function(){
 
-    var imgsrc = $(this).closest('tr').children()[6].getElementsByTagName("img")[0].getAttributeNode("src").value; 
+     
     var index  = $(this).closest('tr').children()[0].textContent;
-   
 
-    $("#type").html($(this).closest('tr').children()[2].textContent);
-    $("#pieces").val($(this).closest('tr').children()[3].textContent);
-    $("#detailsWidthAndHeight").val($(this).closest('tr').children()[4].textContent); 
-      
-    var imgsrc = $(this).closest('tr').children()[6].getElementsByTagName("img")[0].getAttributeNode("src").value;        
-    $('#imgDetail').attr('src', imgsrc);
+    //var imgsrc = $(this).closest('tr').children()[6].getElementsByTagName("img")[0].getAttributeNode("src").value;        
+    //$('#imgDetail').attr('src', imgsrc);
 
     $("#windowIndex").val($(this).closest('tr').children()[0].textContent);
+    $("#type").html($(this).closest('tr').children()[2].textContent);
+    $("#pieces").val($(this).closest('tr').children()[3].textContent);
     $("#profiles").val($(this).closest('tr').children()[8].textContent);
     $("#shutters").val($(this).closest('tr').children()[9].textContent);
     $("#screens").val($(this).closest('tr').children()[10].textContent);
     $("textarea#detailsNotes").val($(this).closest('tr').children()[12].textContent);
-
-     $.ajax({
+      
+    $.ajax({
         type: 'POST',
         url: 'inc/getDetails.php',
         data: { windowIndex: index},
@@ -42,7 +42,6 @@ $('.myDetailsBtn').on('click',function(){
             $("#detailsHeight").val(result['height']);
             $("#detailsClearWidth").val(result['clearwidth']);
             $("#detailsClearHeight").val(result['clearheight']);
-            $("#series").val(result['clearheight']);
             $('#dimensionsSet').html(result['setHtml']);
         }
     });
@@ -65,22 +64,15 @@ $('#updateOrder').click(function() {
     var valClearWidth = $('#detailsClearWidth').val();
     var valClearHeight = $('#detailsClearHeight').val();
 
-    var valdimCase1 = $('#dimCase1').val();
-    var valdimCase2 = $('#dimCase2').val();   
-    var valdimCase3 = $('#dimCase3').val();
-    var valdimCase4 = $('#dimCase4').val();
-    var valdimCase5 = $('#dimCase5').val();   
-    var valdimUp = $('#dimUp').val();
-    var valdimMiddle = $('#dimMiddle').val();
+    isset();
+    var valdimCase1 = isset($('#dimCase1').val());
+    var valdimCase2 = isset($('#dimCase2').val());   
+    var valdimCase3 = isset($('#dimCase3').val());
+    var valdimCase4 = isset($('#dimCase4').val());
+    var valdimCase5 = isset($('#dimCase5').val());   
+    var valdimUp = isset($('#dimUp').val());
+    var valdimMiddle = isset($('#dimMiddle').val());
     
-    var valdimWidth = (parseInt(valdimCase1)||0)+(parseInt(valdimCase2)||0)+(parseInt(valdimCase3)||0)+(parseInt(valdimCase4)||0)+(parseInt(valdimCase5)||0);
-    var valdimHeight = (parseInt(valdimUp)||0)+(parseInt(valdimMiddle)||0);
-
-   if (valdimWidth > valClearWidth) {
-        alert("ΛΑΝΘΑΣΜΕΝΑ ΦΑΡΔΗ");     
-   } else if(valdimHeight > valClearHeight) {
-        alert("ΛΑΝΘΑΣΜΕΝΑ ΥΨΗ"); 
-   } else {
     $.ajax({
         type: 'POST',
         url: 'inc/updateDetails.php',
@@ -104,19 +96,16 @@ $('#updateOrder').click(function() {
                 
                },
         success: function(response) {
-            alert("ΣΩΣΤΗ ΕΝΗΜΕΡΩΣΗ");
+            
             $("#t01 tr:eq(valIndex) td:eq(10)").val("testing...");
-            $('#result1').val(valdimWidth);
-            $('#result2').val(valdimHeight);
+            //$('#result1').val(valdimWidth);
+            //$('#result2').val(valdimHeight);
             //location.reload();
+            $("#detailsMSG").html(response);
             
         }
     });
-   }
-    
- 
- 
-
+   //}
 });   
 
 
@@ -424,4 +413,8 @@ function HeightConverter() {
     document.getElementById("height").value=result.toFixed(2);;
 }
 
+function clearAlert() {
+    document.getElementById('detailsMSG').innerHTML="<div></div>";
+    
+}
 

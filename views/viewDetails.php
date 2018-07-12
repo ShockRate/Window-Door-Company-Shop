@@ -8,7 +8,9 @@
 
         <div class="modal-body">
                
-             
+        <div id="detailsMSG">
+ 
+        </div>                   
 <div class="details-container">
     <div class="details-dimensions">
                 
@@ -41,6 +43,7 @@
                 </div>
   </div>
 <div class="details-image">
+                  
                 <div>
                   <div class="block">
                     <label class="input-label">ΤΥΠΟΣ</label>              
@@ -102,7 +105,7 @@
         </div><!-- /.modal-body -->
 
       <div class="modal-footer" >
-        <button type="button" class="btn btn-default" id="closeModal" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" id="closeModal" data-dismiss="modal" onclick="clearAlert()" >Close</button>
         <button type="button" class="btn btn-primary" id="updateOrder" >Update</button>
       </div><!-- /.modal-footer -->
     </div><!-- /.modal-content -->

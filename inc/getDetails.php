@@ -17,14 +17,13 @@ session_start();
   $dimUp         = $_SESSION['Cart'][$windowIndex]['DimUp'];
   
 
-  // $setHtml = '';
+  $setHtml = '';
   $_SESSION['curentClass'] = $_SESSION['Cart'][$windowIndex]['Class'];
-  $var = $_SESSION['Cart'][$windowIndex]['Class'];
+  $type = $_SESSION['Cart'][$windowIndex]['Type'];
 
 
 if (isset($_SESSION['curentClass']) && $_SESSION['curentClass']==2){
        $setHtml =  '<div class="builder-container">
-                        <p>'.$var.'</p>
                       <div class="builder-left">             
                         <div class="input-container">
                             <div><input type="number" id="dimCase1" name="dimCase1" value="'.$dimCase1.'"></div>
@@ -37,7 +36,7 @@ if (isset($_SESSION['curentClass']) && $_SESSION['curentClass']==2){
                       </div>
                       <div class="builder-right-empty">                                                              
                       </div>
-                    </div>';
+                    </div>';                
      }else if (isset($_SESSION['curentClass']) && $_SESSION['curentClass']==3) {
         $setHtml = '<div class="builder-container">
                       <div class="builder-left">                
@@ -225,6 +224,6 @@ if (isset($_SESSION['curentClass']) && $_SESSION['curentClass']==2){
        $setHtml = '<img class="img-responsive" src="images/'.$_SESSION['Cart'][$windowIndex]['Type'].'.jpg" style = "max-width: 236px; max-height: 236px;"> ';
     }
     
-    echo json_encode(array("width" => $width, "height" => $height, "clearwidth" => $clearwidth, "clearheight" => $clearheight, "setHtml" => $setHtml));
+echo json_encode(array("width" => $width, "height" => $height, "clearwidth" => $clearwidth, "clearheight" => $clearheight, "setHtml" => $setHtml));
                  
 ?>

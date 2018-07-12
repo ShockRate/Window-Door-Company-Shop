@@ -1,6 +1,6 @@
 <br>
 <div class="modal-button">
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#designModal">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createFrame">
   NEW DESIGN
   </button>
 </div>
@@ -8,12 +8,12 @@
 
 
 
-<div class="modal fade" tabindex="-1" id="designModal">
+<div class="modal fade" tabindex="-1" id="createFrame">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-        <h4 class="modal-title" id="mySmallModalLabel">Codes &amp; Company</h4>
+        <h4 class="modal-title" id="mySmallModalLabel">Windows &amp; Doors</h4>
         <!-- <div class="tab" style="text-align: center;">
                   <button class="tablinks" onclick="openTab(event, 'tab-meters')" id="defaultOpen">Meters</button>
                   <button class="tablinks" onclick="openTab(event, 'tab-feet')">Feet</button>
@@ -24,7 +24,7 @@
       <div class="modal-body">
         
        
-          <!-- <div class="container"> -->
+          
             <div class="row">
            
                
@@ -75,7 +75,7 @@
                     onchange="HeightConverter()"/>
                     </div>
                   </div> 
-                              <p>Width: <span id="outputWidth"></span></p>
+                              <p>Width: <span class="hidden" id="outputWidth"></span></p>
                               <p>Height: <span id="outputHeight"></span></p>
                 </div> 
               </div>
@@ -144,7 +144,7 @@
                   </div> <!-- panel-body fbody -->
                 </div>
                 <div id="doors" class="tab-pane fade"><br>
-                  <h3>Doors</h3>
+                  <h3>Main Entrances</h3>
                   <div class="panel-body">
                     <?php for ($row = 37;$row <= $typesWorksheet->getHighestRow('B'); ++ $row) { 
                       $vartype =$typesWorksheet->getCellByColumnAndRow('2',"$row")->getValue();
@@ -170,7 +170,7 @@
             </div>
            
             </div> <!-- row -->
-         <!--  </div> --> <!-- container -->
+        
         </form>
 
 

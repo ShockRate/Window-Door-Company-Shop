@@ -13,6 +13,8 @@
 
     include_once $_SERVER['DOCUMENT_ROOT'].'/test-shop/inc/tableBuilder.php';
 
+    include_once $_SERVER['DOCUMENT_ROOT'].'/test-shop/inc/retrieveTypes.php';
+
     use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
     use PhpOffice\PhpSpreadsheet\Cell\Cell;
     use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
@@ -28,6 +30,7 @@
         $CopyRows       = new copyRows;
         $reader         = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
         $order          = new order;
+        $retrieveTypes  = new retriveTypes; 
        
 
 
@@ -126,13 +129,13 @@ if (isset($newItem)) {
                      "Color"        =>  $_SESSION['order']['Color'],
                      "Glazzing"     =>  $_SESSION['order']['GLazzing'],
                      "Series"       =>  $_SESSION['order']['Series'],
-                     "dimCase1"     => "",
-                     "dimCase2"     => "",
-                     "dimCase3"     => "",
-                     "dimCase4"     => "",
-                     "dimCase5"     => "",                   
-                     "DimUp"        => "",
-                     "DimMiddle"    => ""
+                     "dimCase1"     => " ",
+                     "dimCase2"     => " ",
+                     "dimCase3"     => " ",
+                     "dimCase4"     => " ",
+                     "dimCase5"     => " ",                   
+                     "DimUp"        => " ",
+                     "DimMiddle"    => " "
 
 
                     
@@ -207,7 +210,9 @@ if (isset($newItem)) {
  
   ?> 
   <!-- TESTING CODE-->
-  
+  <?php
+  $retrieveTypes->getSheetNames();
+  ?>
   <!--END OF TESTIGN CODE -->
   <br>
   <div style="text-align: center;">
