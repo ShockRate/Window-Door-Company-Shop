@@ -41,8 +41,8 @@ echo $series;
 				    			?></td>
 				    <td><?php echo ($arr['Width'] - $arr['SillLeft'] - $arr['SillRight']).'/<br>'.($arr['Height'] - $arr['SillUp'] - $arr['SillDown']);?></td>
 				    <td><?php echo $arr['Profile'];?></td>
-				    <td><?php echo $arr['Shutters'];?></td>
 				    <td><?php echo $arr['Screens'];?></td>
+				    <td><?php echo $arr['Shutters'];?></td>
 				    <td></td>
 				    <td><?php echo $arr['DetailsNotes'];?></td>
 				    <!-- <td>
@@ -57,7 +57,17 @@ echo $series;
 						
 				 
 				</table>
-				<br>
+				
 				
 			</div>
+			<br>
+			<div style="text-align: center;">
+				<button type="button" class="btn btn-warning" id="clearTable">ΕΚΑΘΑΡΙΣΗ ΠΑΡΑΓΓΕΛΙΑΣ</button>			
+			</div>
+			<br>
+			<form method="post" action="inc/download.php">
+				<div style="text-align: center;">
+					<input type="submit" value="Download Excel" class="btn btn-primary" id="btn-download" name="download" >
+				</div>
+			</form>
 		

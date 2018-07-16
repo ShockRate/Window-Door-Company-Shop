@@ -31,8 +31,8 @@ foreach ($_SESSION['Cart'] as $arr) {
 	$worksheet->setCellValue('G'.$index, $arr['Width'].' '."\r\n".' '.$arr['Height'] );
 	$worksheet->setCellValue('K'.$index, $arr['ClearWidth'].' '."\r\n".' '.$arr['ClearHeight'] );
 	$worksheet->setCellValue('Q'.$index , $arr['Profile']);
-	$worksheet->setCellValue('Q'.($index+1) , $arr['Shutters']);
-	$worksheet->setCellValue('T'.($index+1) , $arr['Screens']);
+	$worksheet->setCellValue('T'.($index+1) , $arr['Shutters']);
+	$worksheet->setCellValue('Q'.($index+1) , $arr['Screens']);
 	//ADD PRODUCT IMAGE AND DIMENSIONS
     $CopyRows->addImage($arr['Class'],'../images/'.$arr['Type'].'.jpg',$arr['Type'].'jpg','M'.$index,$spreadsheet->getActiveSheet());
     $worksheet->setCellValue('L'.$index , $arr['DimUp']);

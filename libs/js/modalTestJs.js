@@ -27,8 +27,8 @@ $('.myDetailsBtn').on('click',function(){
     $("#type").html($(this).closest('tr').children()[2].textContent);
     $("#pieces").val($(this).closest('tr').children()[3].textContent);
     $("#profiles").val($(this).closest('tr').children()[8].textContent);
-    $("#shutters").val($(this).closest('tr').children()[9].textContent);
-    $("#screens").val($(this).closest('tr').children()[10].textContent);
+    $("#shutters").val($(this).closest('tr').children()[10].textContent);
+    $("#screens").val($(this).closest('tr').children()[9].textContent);
     $("textarea#detailsNotes").val($(this).closest('tr').children()[12].textContent);
       
     $.ajax({
@@ -53,7 +53,10 @@ $('.myDetailsBtn').on('click',function(){
 //ΕΝΗΜΕΡΩΣΗ ΠΑΡΑΓΓΕΛΙΑΣ
 $('#updateOrder').click(function() {   
     var valIndex = $('#windowIndex').val();
+
     var valShutters = $('#shutters').val();
+    var valSlats = $('#slats').val();
+    var valMechanism = $('#mechanism').val();
     var valScreens = $('#screens').val();
     var valProfiles = $('#profiles').val();
     var valNotes = $('#detailsNotes').val();
@@ -78,6 +81,8 @@ $('#updateOrder').click(function() {
         url: 'inc/updateDetails.php',
         data: { windowIndex: valIndex, 
                 shutters: valShutters, 
+                slats: valSlats,
+                mechanism: valMechanism,
                 screens: valScreens, 
                 profiles: valProfiles, 
                 detailsNotes: valNotes, 
@@ -417,4 +422,17 @@ function clearAlert() {
     document.getElementById('detailsMSG').innerHTML="<div></div>";
     
 }
+
+function showExtras(aval) {
+    if (aval === "") {
+    
+    document.getElementById("extra-parts").style.display='none';
+    //Form.fileURL.focus();
+    } 
+    else{
+        document.getElementById("extra-parts").style.display='inline-block';
+        //document.getElementById("result").setAttribute("value", aval);
+   
+    }
+  }
 

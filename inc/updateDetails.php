@@ -3,7 +3,9 @@
 //DECLARE VARIABLES AN INITIALIZE VALUES FROM DETAILS FORM
 	$windowIndex 	= $_POST['windowIndex'] -1;
 
- 	$shutters  		= $_POST['shutters'];
+	$shutters  		= $_POST['shutters'];
+	$slats  		= $_POST['slats'];
+	$mechanism  	= $_POST['mechanism'];
 	$screens   		= $_POST['screens'];
 	$profiles  		= $_POST['profiles'];
 	$detailsNotes  	= $_POST['detailsNotes'];
@@ -20,8 +22,8 @@
 	$dimCase4  		= $_POST['dimCase4'];
 	$dimCase5  		= $_POST['dimCase5'];
  	
- 	$dimUp  			= $_POST['dimUp'];
-	$dimMiddle  		= $_POST['dimMiddle'];
+ 	$dimUp  		= $_POST['dimUp'];
+	$dimMiddle  	= $_POST['dimMiddle'];
 
 	$dimWidthSum = $dimCase1+$dimCase2+$dimCase3+$dimCase4+$dimCase5;
 	$dimHeightSum = $dimUp+$dimMiddle;
@@ -45,6 +47,8 @@
 	}
 	// ΠΕΡΝΑΜΕ ΤΙΜΕΣ ΤΙΜΕΣ ΣΤΟ SESSION
 		$_SESSION['Cart'][$windowIndex]['Shutters']			= $shutters;
+		$_SESSION['Cart'][$windowIndex]['Slats']			= $slats;
+		$_SESSION['Cart'][$windowIndex]['Mechanism']		= $mechanism;
 		$_SESSION['Cart'][$windowIndex]['Screens']  		= $screens;
 		$_SESSION['Cart'][$windowIndex]['Profile']  		= $profiles;
 		$_SESSION['Cart'][$windowIndex]['DetailsNotes'] 	= $detailsNotes;

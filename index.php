@@ -119,6 +119,8 @@ if (isset($newItem)) {
                      "Sills"        => "images/shifts/UDLR.png",
                      "Profile"      => "",
                      "Shutters"     => "",
+                     "Slats"        => "",
+                     "Mechanism"    => "",
                      "Screens"      => "",
                      "DetailsNotes" => "Λεπτομέρειες",
                      "SillUp"       => "2.5",
@@ -197,7 +199,7 @@ if (isset($newItem)) {
         if (isset($_SESSION['order']) && !empty($_SESSION['order'])){
             
             include_once 'views/testingHTML.php';
-            //include_once 'views/designModal.php';
+            //include_once 'views/V2designModal.php';
             include_once 'views/viewCreateFrame.php';
             include_once 'views/viewDetails.php';
             include_once 'views/viewOrderDetails.php';
@@ -211,21 +213,20 @@ if (isset($newItem)) {
   ?> 
   <!-- TESTING CODE-->
   <?php
-  $retrieveTypes->getSheetNames();
+//   echo "testing!!<br>";
+//   foreach ($retrieveTypes->getCategoriesNames() as $catName){
+//    echo $catName." ".$retrieveTypes->getCategoryHighestRow($catName);
+//    echo '<br>';
+//    //echo $retrieveTypes->getCategorybyName($catName)->getCellByColumnAndRow('1','3')->getValue();
+//    //echo '<br>';
+//   }
+  
+  
+//   echo $retrieveTypes->getCategoriesSum();
   ?>
   <!--END OF TESTIGN CODE -->
-  <br>
-  <div style="text-align: center;">
-                    <button type="button" class="btn btn-warning" id="clearTable">CLEAR THE ORDER</button>
-                    <br>
-                    
-    </div>
-    <br>
-     <form method="post" action="inc/download.php">
-        <div style="text-align: center;">
-             <input type="submit" value="Download Excel" class="btn btn-primary" id="btn-download" name="download" >
-        </div>
-     </form>
+  
+     
 </div>
 
 

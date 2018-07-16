@@ -73,13 +73,31 @@
            <p>
            <div class="block">
              <label>ΡΟΛΑ</label>
-             <select class="form-control" id="shutters" name="<?php echo $worksheet->getCellByColumnAndRow(6,'1')->getValue();?>">
+             <select class="form-control" id="shutters" name="<?php echo $worksheet->getCellByColumnAndRow(6,'1')->getValue();?>" onchange="showExtras(this.value)">
                <?php for ($row = 2; $row <= $worksheet->getHighestRow('F'); $row++) { ?>
                  <option value="<?php echo $worksheet->getCellByColumnAndRow(6,$row)->getValue();?>"><?php echo $worksheet->getCellByColumnAndRow(6,$row)->getValue();?></option>
                <?php } ?>
              </select>
            </div>
            </p>
+           <div id ="extra-parts">
+            <div class="block">
+              <label>ΦΙΛΑΡΑΚΙ</label>
+              <select class="form-control" id="slats" name="<?php echo $worksheet->getCellByColumnAndRow(7,'1')->getValue();?>">
+                <?php for ($row = 2; $row <= $worksheet->getHighestRow('G'); $row++) { ?>
+                  <option value="<?php echo $worksheet->getCellByColumnAndRow(7,$row)->getValue();?>"><?php echo $worksheet->getCellByColumnAndRow(7,$row)->getValue();?></option>
+                <?php } ?>
+              </select>
+            </div>
+            <div class="block">
+              <label>ΚΙΝΗΣΗ ΡΟΛΟΥ</label>
+              <select class="form-control" id="mechanism" name="<?php echo $worksheet->getCellByColumnAndRow(8,'1')->getValue();?>">
+                <?php for ($row = 2; $row <= $worksheet->getHighestRow('H'); $row++) { ?>
+                  <option value="<?php echo $worksheet->getCellByColumnAndRow(8,$row)->getValue();?>"><?php echo $worksheet->getCellByColumnAndRow(8,$row)->getValue();?></option>
+                <?php } ?>
+              </select>
+            </div>
+          </div>
            
            <p>
            <div class="block">
@@ -91,6 +109,7 @@
              </select>
            </div>
            </p>
+           
 
            
 </div>
