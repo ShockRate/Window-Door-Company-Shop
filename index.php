@@ -122,7 +122,7 @@ if (isset($newItem)) {
                      "Slats"        => "",
                      "Mechanism"    => "",
                      "Screens"      => "",
-                     "DetailsNotes" => "Λεπτομέρειες",
+                     "DetailsNotes" => "",
                      "SillUp"       => "2.5",
                      "SillDown"     => "2.5",
                      "SillLeft"     => "2.5",
@@ -198,13 +198,15 @@ if (isset($newItem)) {
 <?php
         if (isset($_SESSION['order']) && !empty($_SESSION['order'])){
             
-            include_once 'views/testingHTML.php';
+            
             //include_once 'views/V2designModal.php';
             include_once 'views/viewCreateFrame.php';
             include_once 'views/viewDetails.php';
             include_once 'views/viewOrderDetails.php';
+            include_once 'views/viewCart.php';   
             include_once 'views/viewOrderTable.php';
-            include_once 'views/viewFrameSill.php';          
+            include_once 'views/viewFrameSill.php';
+                   
         } else {
             include_once 'views/viewCreateOrder.php'; 
 
@@ -213,16 +215,7 @@ if (isset($newItem)) {
   ?> 
   <!-- TESTING CODE-->
   <?php
-//   echo "testing!!<br>";
-//   foreach ($retrieveTypes->getCategoriesNames() as $catName){
-//    echo $catName." ".$retrieveTypes->getCategoryHighestRow($catName);
-//    echo '<br>';
-//    //echo $retrieveTypes->getCategorybyName($catName)->getCellByColumnAndRow('1','3')->getValue();
-//    //echo '<br>';
-//   }
-  
-  
-//   echo $retrieveTypes->getCategoriesSum();
+
   ?>
   <!--END OF TESTIGN CODE -->
   

@@ -1,5 +1,5 @@
 <?php  $i = 1;
-echo $series;
+ echo $series;
  $tableBuilder   = new tableBuilder;
 ?>
 
@@ -42,16 +42,17 @@ echo $series;
 				    <td><?php echo ($arr['Width'] - $arr['SillLeft'] - $arr['SillRight']).'/<br>'.($arr['Height'] - $arr['SillUp'] - $arr['SillDown']);?></td>
 				    <td><?php echo $arr['Profile'];?></td>
 				    <td><?php echo $arr['Screens'];?></td>
-				    <td><?php echo $arr['Shutters'];?></td>
+					<td>
+						<?php echo $arr['Shutters'];?>
+						<?php echo $arr['Slats'];?>
+						<?php echo $arr['Mechanism'];?>
+					</td>
 				    <td></td>
 				    <td><?php echo $arr['DetailsNotes'];?></td>
-				    <!-- <td>
-  						
-						</td> -->
-						<td>
-							<button class="btn btn-danger btn-sm deleteBtn">ΔΙΑΓΡΑΦΗ</button>
-						</td>
-						</tr>
+					<td>
+						<button class="btn btn-danger btn-sm deleteBtn">ΔΙΑΓΡΑΦΗ</button>
+					</td>
+				</tr>
 						<?php } 
 					}?>
 						

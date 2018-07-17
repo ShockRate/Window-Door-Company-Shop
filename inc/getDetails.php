@@ -15,6 +15,10 @@ session_start();
   $dimCase5      = $_SESSION['Cart'][$windowIndex]['dimCase5'];
   $dimMiddle     = $_SESSION['Cart'][$windowIndex]['DimMiddle'];
   $dimUp         = $_SESSION['Cart'][$windowIndex]['DimUp'];
+
+  $shutters      = $_SESSION['Cart'][$windowIndex]['Shutters'];
+  $slats         = $_SESSION['Cart'][$windowIndex]['Slats'];
+  $mechanism     = $_SESSION['Cart'][$windowIndex]['Mechanism'];
   
 
   $setHtml = '';
@@ -224,6 +228,6 @@ if (isset($_SESSION['curentClass']) && $_SESSION['curentClass']==2){
        $setHtml = '<img class="img-responsive" src="images/'.$_SESSION['Cart'][$windowIndex]['Type'].'.jpg" style = "max-width: 236px; max-height: 236px;"> ';
     }
     
-echo json_encode(array("width" => $width, "height" => $height, "clearwidth" => $clearwidth, "clearheight" => $clearheight, "setHtml" => $setHtml));
+echo json_encode(array("width" => $width, "height" => $height, "clearwidth" => $clearwidth, "clearheight" => $clearheight, "shutters" => $shutters, "slats" => $slats, "mechanism" => $mechanism, "setHtml" => $setHtml));
                  
 ?>

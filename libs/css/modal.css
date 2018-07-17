@@ -1,60 +1,49 @@
+/*CSS ΥΠΕΥΘΥΝΟ ΓΙΑ ΌΛΑ ΤΑ ΑΝΟΙΓΟΜΕΝΑ ΠΑΡΑΘΥΡΑ (ΝΕΑ ΚΑΤΑΣΚΕΥΗ, ΛΕΠΤΟΜΕΡΙΕΣ ΚΑΙ ΠΕΡΒΑΖΙΑ)*/
+.modal-button{
+    text-align: center;
+}
 .modal {
-    left: 0;
+    /*left: 0;
     top: 10;
-    width: 80%; /* Full width */
+    width: 100%;  Full width 
     height: 100%;
-    /*position: fixed;*/
-   /* overflow: hidden;*/
-    margin: auto;
+    margin: auto;*/
     
 }
-
-
-
-
 .modal-dialog{
-     
+    width: 80%; 
 }
 .modal-contnent{
-    background-color: #fefefe;
+    /*background-color: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
-    
+    width: 80%;*/
 }
-
 .modal-body{
-
     min-height:550px; 
-
     max-height: calc(100vh - 210px);    
     overflow-y:auto;
-
-
-}
-
-
-#modal-left {
-    float: left;
-    width: 20%;
-    background: whitesmoke;
     
+    
+}
+/* ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+.productSidenav {
+    width: 25%;
     position: fixed;
-    /*padding: 30px;  */  
-    /*overflow-y: auto; */   
+    z-index: 1;
+    top: 15%;
+    left: 5%;
+    background: #eee;
+    overflow-x: hidden;
+    text-align: center;
+    max-height: 90%; 
+    /*padding: 8px 0;*/
 }
-
-#modal-right {
-    float: right;
-    width: 80%;
-    background: white;
-    height: 100%;
-    /*position: relative;*/
-    min-height:100px; 
-   /* overflow-y: scroll;*/
+.main-panel {
+    margin-left: 35%;   
 }
-
+/* ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
 #modal-left-s {
     float: left;
     width: 50%;
@@ -67,37 +56,45 @@
     background: white;
     
 }
-
+#productImage{
+    width: 100%;
+    height: 100%;
+    max-width: 50%;
+    max-height: 40%;
+}
 #productLabel {
-font-size: 20px;
-text-align: center;
-display:block;
-margin-left: auto;
-margin-right: auto;
+    font-size: 20px;
+    text-align: center;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 236px; 
+    word-wrap: break-word;
 }
 
-.productWidth {
-font-size: 20px;
-text-align: center;
-display:block;
-margin-left: auto;
-margin-right: auto;
+#productWidth {
+    font-size: 20px;
+    text-align: center;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #productHeight {
-font-size: 20px;
-text-align: center;
-display:block;
-margin-left: auto;
-margin-right: auto;
+    font-size: 20px;
+    text-align: center;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/*.row {
-    position: absolute;
-    margin: auto;
+.row{
+   /* width:100%;
+    background-color:silver;*/
+    position: relative;
+    display:flex;
 
-
-}*/
+}
 
 .column {
     /*float: left;*/
@@ -105,9 +102,53 @@ margin-right: auto;
     width: 50%;
 }
 
-/* Clear floats after the columns */
-/*.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}*/
+.product-tabs{
+    z-index: 2;
+    background-color: white;
+    position: fixed;
+    margin-top: 0%;  
+}
+.nav-tabs{
+    height: 50px;
+}
+.tab-content {
+            
+    position: absolute;
+    border: 1px solid #ccc;
+    margin-top: 5%;
+   
+}    
+
+.details-container{
+	position: relative;
+	text-align: center;
+    display: flex;
+    margin: auto;
+    }
+    
+.details-dimensions{
+    width: 25%;
+    margin-top: 10%;
+    
+}
+
+.details-image{
+    width: 50%;
+    text-align: center;
+    
+}
+
+.details-extras{
+    width: 25%;
+    margin-top: 10%;
+   
+}
+
+#feet-width, #inches-width,#feet-height, #inches-height{
+    width: 32%;
+}
+
+#extra-parts{
+    display:none;
+    padding-left: 10%;
+}

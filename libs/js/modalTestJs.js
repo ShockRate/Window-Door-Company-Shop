@@ -27,7 +27,7 @@ $('.myDetailsBtn').on('click',function(){
     $("#type").html($(this).closest('tr').children()[2].textContent);
     $("#pieces").val($(this).closest('tr').children()[3].textContent);
     $("#profiles").val($(this).closest('tr').children()[8].textContent);
-    $("#shutters").val($(this).closest('tr').children()[10].textContent);
+    //$("#shutters").val($(this).closest('tr').children()[10].textContent);
     $("#screens").val($(this).closest('tr').children()[9].textContent);
     $("textarea#detailsNotes").val($(this).closest('tr').children()[12].textContent);
       
@@ -37,7 +37,9 @@ $('.myDetailsBtn').on('click',function(){
         data: { windowIndex: index},
         success: function(response) {
             var result = $.parseJSON(response);
-            
+            $("#shutters").val(result['shutters']);
+            $("#slats").val(result['slats']);
+            $("#mechanism").val(result['mechanism']);
             $("#detailsWidth").val(result['width']);
             $("#detailsHeight").val(result['height']);
             $("#detailsClearWidth").val(result['clearwidth']);
@@ -435,4 +437,8 @@ function showExtras(aval) {
    
     }
   }
+
+  $('#createFrame').on('hide.bs.modal', function () {
+    $('#createFrame').scrollTop(0);
+});
 

@@ -70,14 +70,16 @@
             <input type="submit" value="Προσθήκη" class="btn btn-primary" name="newItem">
           </div>
             
-            <div class="main-panel">       
-              <ul class="nav nav-tabs" role="tablist">
-                <?php foreach ($retrieveTypes->getCategoriesNames() as $catName) { ?>
-                  <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href='#<?=str_replace(' ','',$catName)?>'><?php echo $catName?></a>
-                  </li>
-                <?php } ?>                
-              </ul>           
+            <div class="main-panel">  
+              <div class="product-tabs">     
+                <ul class="nav nav-tabs" role="tablist">
+                  <?php foreach ($retrieveTypes->getCategoriesNames() as $catName) { ?>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href='#<?=str_replace(' ','',$catName)?>'><?php echo $catName?></a>
+                    </li>
+                  <?php } ?>                
+                </ul> 
+                  </div>          
               <div class="tab-content">
                 <?php foreach ($retrieveTypes->getCategoriesNames() as $catName) { ?>
                   <div id='<?=str_replace(' ','',$catName)?>' class="tab-pane <?php echo (!isset($retVal)) ? 'active' : '' ;?>"><br>
