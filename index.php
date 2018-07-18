@@ -170,8 +170,8 @@ if (isset($newItem)) {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="libs/css/builder.css" rel="stylesheet" media="screen"> 
     <link href="libs/css/index.css" rel="stylesheet" media="screen"> 
-    <link href="libs/css/modalTestCss.css" rel="stylesheet" media="screen"> 
-    <!-- <link href="libs/css/modal.css" rel="stylesheet" media="screen"> --> 
+    <link href="libs/css/modal.css" rel="stylesheet" media="screen"> 
+    <!-- <link href="libs/css/modalTestCss.css" rel="stylesheet" media="screen">  -->
     
    
    
@@ -180,10 +180,7 @@ if (isset($newItem)) {
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="http://html2canvas.hertzen.com/build/html2canvas.js"></script>
-
-    <script type="text/javascript" src="libs/js/html2canvas.js"></script>
-
+    
  
 
 
@@ -203,7 +200,7 @@ if (isset($newItem)) {
             include_once 'views/viewCreateFrame.php';
             include_once 'views/viewDetails.php';
             include_once 'views/viewOrderDetails.php';
-            include_once 'views/viewCart.php';   
+            //include_once 'views/viewCart.php';   
             include_once 'views/viewOrderTable.php';
             include_once 'views/viewFrameSill.php';
                    
@@ -223,10 +220,9 @@ if (isset($newItem)) {
 </div>
 
 
-<script type="text/javascript" src="libs/js/modalTestJs.js"></script>
 
-<!-- <script type="text/javascript" src="libs/js/modal.js"></script> -->
-<script type="text/javascript" src="libs/js/hideBtn.js"></script> 
+<script type="text/javascript" src="libs/js/test-shop.js"></script>
+
 
 </body>
 </html>
