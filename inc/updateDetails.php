@@ -1,5 +1,6 @@
 <?php  
 	session_start();
+
 //DECLARE VARIABLES AN INITIALIZE VALUES FROM DETAILS FORM
 	$windowIndex 	= $_POST['windowIndex'] -1;
 
@@ -107,7 +108,7 @@
 	 } elseif ($warning == true && $error == false ) {
 		$alertMSG .= '<div class="alert alert-warning fade in">ΕΝΗΜΕΡΩΣΗ ΕΠΙΤΥΧΗΣ ΑΛΛΑ ΧΡΕΙΑΖΟΝΤΑΙ ΔΙΕΥΚΡΙΝΗΣΕΙΣ<br>'.$MSG.'</div>';
 	 }	else {
-		$alertMSG .= '<div class="alert alert-success fade in">ΕΝΗΜΕΡΩΣΗ ΕΠΙΤΥΧΗΣ<br>'.$MSG.'</div>';
+		$alertMSG .= '<div class="alert alert-success fade in">ΕΝΗΜΕΡΩΣΗ ΕΠΙΤΥΧΗΣ'.TXT_MAIL_OK.'<br>'.$MSG.'</div>';
 	 } 	
 	 
 	 
