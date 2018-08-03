@@ -41,17 +41,14 @@
  *  Μεταβλητές
  * ============================================================================================
  */
+        // set login var
+        $loggedIn=$admin= FALSE;
+
         // set page title
         $page_title             ="Products";
-        // Retrieve data from Excel
-        //$tmpfname               = $_SERVER['DOCUMENT_ROOT'].'/test-shop/data/data.xlsx';
-        $spreadsheet            = $reader->load($tmpfname);   
-        //$worksheet              = $spreadsheet->getActiveSheet();
+        
         $worksheet              = $retrieveData->activeSheet();
-        //Load TYPES data
-        $typesfname             = $_SERVER['DOCUMENT_ROOT'].'/test-shop/data/typenames.xlsx';
-        $typesSpreadsheet       = $reader->load($typesfname);  
-        $typesWorksheet         = $typesSpreadsheet->getActiveSheet();
+        
         // Php office variables
         $lastRow                = $worksheet->getHighestRow();
         $lastColl               = $worksheet->getHighestColumn();
@@ -80,6 +77,14 @@
         $newOrder               = $Check->PagePostVars('newOrder');
 
 
+if (isset($_SESSION['user_id'])) {
+    $loggedIn = TRUE;
+    if (isset($_SESSION['user_level'])) {
+        if ($_SESSION['user_level'] == 1) {
+            $admin = TRUE;
+        }
+    }
+}
 if(isset($newOrder)){
 
     
@@ -154,25 +159,29 @@ if (isset($newItem)) {
 
        
             
-    
-
-        if (isset($_SESSION['order']) && !empty($_SESSION['order'])){
+            include_once 'views/header.php';
+            if ($loggedIn) {
+                if (isset($_SESSION['order']) && !empty($_SESSION['order'])){
             
-            include_once 'views/header.php';
-            //include_once 'views/V2designModal.php';
-            include_once 'views/viewCreateFrame.php';
-            include_once 'views/viewDetails.php';
-            include_once 'views/viewOrderDetails.php';
-            //include_once 'views/viewCart.php';   
-            include_once 'views/viewOrderTable.php';
-            include_once 'views/viewFrameSill.php';
-            include_once 'views/footer.php';       
-        } else {
-            include_once 'views/header.php';
-            include_once 'views/viewCreateOrder.php'; 
+                    //include_once 'views/header.php';
+                    //include_once 'views/V2designModal.php';
+                    include_once 'views/viewCreateFrame.php';
+                    include_once 'views/viewDetails.php';
+                    include_once 'views/viewOrderDetails.php';
+                    include_once 'views/viewOrderTable.php';
+                    include_once 'views/viewFrameSill.php';
+                    //include_once 'views/footer.php';       
+                } else {
+                    //include_once 'views/header.php';
+                    include_once 'views/viewCreateOrder.php'; 
+                   // include_once 'views/footer.php';
+        
+                }
+         
+            } else {
+                //header("Location: test-code/login/index.html"); 
+                include_once 'views/TESTloginForm.php'; 
+            }
             include_once 'views/footer.php';
-
-        }
- 
   ?> 
  

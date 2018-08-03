@@ -19,6 +19,7 @@
     <link href="libs/css/index.css" rel="stylesheet" media="screen"> 
     <link href="libs/css/modal.css" rel="stylesheet" media="screen"> 
     <!-- <link href="libs/css/modalTestCss.css" rel="stylesheet" media="screen">  -->
+    <link href="test-code/loginForm/style.css" rel="stylesheet" media="screen"> 
     
    
    
@@ -33,7 +34,9 @@
 
 </head>
 <body>
-
+    <header>
+        <h1><?php echo $page_header_title?></h1>
+    </header>
  <?php include_once 'views/navigation.php'; ?>
 
 <div class="container">

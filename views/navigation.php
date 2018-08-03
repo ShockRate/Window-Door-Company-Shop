@@ -9,12 +9,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="products.php">EPAL Webstore</a>
+            <a class="navbar-brand" href="index.php">EPAL Webstore</a>
         </div>
  
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
- 
+                <?php if($loggedIn){ ?>
                 <!-- highlight if $page_title has 'Products' word. -->
                 <li <?php echo strpos($page_title, "Product")!==false ? "class='active'" : ""; ?>>
                     <a href="products.php">Products</a>
@@ -26,6 +26,14 @@
                         Cart <span class="badge" id="comparison-count">0</span>
                     </a>
                 </li>
+                <?php }else { ?>
+                <!-- <li>
+                    <a href="register.php"> Register </a>
+                </li>
+                <li>
+                    <a href="login.php"> Login </a>
+                </li> -->
+                <?php } ?>
             </ul>
  
         </div><!--/.nav-collapse -->

@@ -9,7 +9,7 @@
         <h4 class="modal-title">Codes &amp; Company</h4>
       </div>
       <div class="modal-body">
-       <!-- <form method="post" action="index.php">  -->
+     
         <p><input type="text" id="sillIndex" name="sillIndex"></p>
          <p><input type="text" id="sillsImageSrc" name="sillsImageSrc"></p>
          
@@ -51,8 +51,7 @@
             </div>          
           </div>
         </div> <!--container-->
-        <!-- <input type="submit" value="Προσθήκη" class="btn btn-primary" name="newSills">
-        </form> -->
+        
       </div> <!-- modal-body -->
           <div class="modal-footer">      
             <button type="button" class="btn btn-default" id="changeSillsbutton" data-dismiss="modal">Change</button>     
