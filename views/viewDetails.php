@@ -51,10 +51,9 @@
                   </div> 
                    <div id="dimensionsSet">                                  
                    </div>                  
-                  <br>
-                  
-                                 
-                </div>  
+                  <br>            
+                </div> 
+                 
 </div>
 <div class="details-extras">
   <p><input type="text" id="windowIndex" name="sillIndex"></p>
@@ -109,16 +108,15 @@
              </select>
            </div>
            </p>
-           
-
-           
+                     
 </div>
-                                        
+      
                                       
-            </div><!--/.details-container-->
-            <textarea id="detailsNotes" rows="5" cols="50">
-             
-             </textarea>
+</div><!--/.details-container-->
+      <div class ="details-text">
+        <textarea id="detailsNotes" rows="5" cols="50"></textarea>
+      </div>      
+         
        
         
         </div><!-- /.modal-body -->

@@ -27,6 +27,7 @@
                     </a>
                 </li>
                 <?php }else { ?>
+                    
                 <!-- <li>
                     <a href="register.php"> Register </a>
                 </li>
@@ -34,6 +35,7 @@
                     <a href="login.php"> Login </a>
                 </li> -->
                 <?php } ?>
+                
             </ul>
  
         </div><!--/.nav-collapse -->

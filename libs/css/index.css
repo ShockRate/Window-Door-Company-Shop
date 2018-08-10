@@ -1,4 +1,4 @@
-             html, body {
+             body {
                 background-color: #fff;
                 color: #636b6f;
                 font-family:  sans-serif;
@@ -6,7 +6,7 @@
                 height: 100vh;
                 margin: 0;
                 
-                position: relative;
+                /* position: relative; */
 
                 
             }
@@ -189,5 +189,10 @@
                 background-color: #ccc;
             }
 
-            /*CART CSS*/
+            footer{
+                position: absolute;
+                bottom: 2%;
+                left: 5%;
+            }
+            
             

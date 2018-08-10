@@ -143,7 +143,9 @@
     margin-top: 10%;
    
 }
-
+.details-text{
+    text-align: center;
+}
 #feet-width, #inches-width,#feet-height, #inches-height{
     width: 32%;
 }

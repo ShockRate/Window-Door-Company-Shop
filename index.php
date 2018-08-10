@@ -15,6 +15,8 @@
 
     include_once $_SERVER['DOCUMENT_ROOT'].'/test-shop/inc/retrieveExcel.php';
 
+    include 'inc/preferences.php';
+
     use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
     use PhpOffice\PhpSpreadsheet\Cell\Cell;
     use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
@@ -42,10 +44,11 @@
  * ============================================================================================
  */
         // set login var
-        $loggedIn=$admin= FALSE;
+        $loggedIn=$admin= true;
 
         // set page title
-        $page_title             ="Products";
+        $page_title             ="EPAL Shop";
+        $page_header_title      ="Home Page";
         
         $worksheet              = $retrieveData->activeSheet();
         
@@ -109,12 +112,8 @@ if(isset($newOrder)){
 
 if (isset($newItem)) {
                 
-                
-               
                 $item = new testWindow($_POST['aa'], $_POST['productType'], 1, $_POST['width'], $_POST['height'] );
              
-                echo "<br>";
-                echo "meters";
                 $_SESSION['Cart'][] = array(
 
                      "ID"           => $item->getId(),
@@ -159,22 +158,22 @@ if (isset($newItem)) {
 
        
             
-            include_once 'views/header.php';
+            include_once HEADER;
             if ($loggedIn) {
+                
                 if (isset($_SESSION['order']) && !empty($_SESSION['order'])){
             
-                    //include_once 'views/header.php';
-                    //include_once 'views/V2designModal.php';
+             
                     include_once 'views/viewCreateFrame.php';
                     include_once 'views/viewDetails.php';
                     include_once 'views/viewOrderDetails.php';
                     include_once 'views/viewOrderTable.php';
                     include_once 'views/viewFrameSill.php';
-                    //include_once 'views/footer.php';       
+                          
                 } else {
-                    //include_once 'views/header.php';
+                   
                     include_once 'views/viewCreateOrder.php'; 
-                   // include_once 'views/footer.php';
+                   
         
                 }
          
