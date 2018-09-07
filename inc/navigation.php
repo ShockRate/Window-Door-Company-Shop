@@ -13,7 +13,8 @@
         </div>
  
         <div class="navbar-collapse collapse">
-            <?php if($loggedIn){ ?>
+            
+         <?php if($loggedIn){ ?>
             <ul class="nav navbar-nav">
                 <!-- highlight if $page_title has 'Products' word. -->
                 <li <?php echo strpos($page_title, "Product")!==false ? "class='active'" : ""; ?>>
@@ -28,21 +29,20 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a><?php echo isset($_SESSION['full_name'])?$_SESSION['full_name']:'' ?></a></li>
+                <li><span> <?php echo isset($_SESSION['full_name'])?$_SESSION['full_name']:'' ?></span></li>
                 <li><a href="inc/logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
             </ul>  
-            <?php }else { ?>
+        <?php }else { ?>
+                    
+                <!-- <li>
+                    <a href="register.php"> Register </a>
+                </li>
+                <li>
+                    <a href="login.php"> Login </a>
+                </li> -->
+                <?php } ?>
                 
-            <!-- <li>
-                <a href="register.php"> Register </a>
-            </li>
-            <li>
-                <a href="login.php"> Login </a>
-            </li> -->
-            <?php } ?>
-                
-        
- 
+                 
         </div><!--/.nav-collapse -->
  
     </div>

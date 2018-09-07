@@ -26,9 +26,11 @@
  	$dimUp  		= $_POST['dimUp'];
 	$dimMiddle  	= $_POST['dimMiddle'];
 
+	//ΑΘΡΟΙΖΟΥΜΕ ΤΑ ΣΥΝΟΛΙΚΑ ΦΑΡΔΗ ΚΑΘΕ ΦΥΛΛΟΥ
 	$dimWidthSum = $dimCase1+$dimCase2+$dimCase3+$dimCase4+$dimCase5;
+	//ΑΘΡΟΙΖΟΥΜΕ ΤΑ ΣΥΝΟΛΙΚΑ ΥΨΗ
 	$dimHeightSum = $dimUp+$dimMiddle;
-//SET MINIMUN AND MAXIMUM VALUES FOR HEIGHT AND WIDTH
+	//SET MINIMUN AND MAXIMUM VALUES FOR HEIGHT AND WIDTH
 	$maxWidth = 10000;
 	$minWidth = 50;
 	$maxHeight = 5000;
@@ -46,7 +48,7 @@
 		else return $myVal; 
 
 	}
-	// ΠΕΡΝΑΜΕ ΤΙΜΕΣ ΤΙΜΕΣ ΣΤΟ SESSION
+	// ΠΕΡΝΑΜΕ ΤΙΜΕΣ ΤΩΝ DROPDOWN MENU ΣΤΟ SESSION
 		$_SESSION['Cart'][$windowIndex]['Shutters']			= $shutters;
 		$_SESSION['Cart'][$windowIndex]['Slats']			= $slats;
 		$_SESSION['Cart'][$windowIndex]['Mechanism']		= $mechanism;
@@ -108,7 +110,7 @@
 	 } elseif ($warning == true && $error == false ) {
 		$alertMSG .= '<div class="alert alert-warning fade in">ΕΝΗΜΕΡΩΣΗ ΕΠΙΤΥΧΗΣ ΑΛΛΑ ΧΡΕΙΑΖΟΝΤΑΙ ΔΙΕΥΚΡΙΝΗΣΕΙΣ<br>'.$MSG.'</div>';
 	 }	else {
-		$alertMSG .= '<div class="alert alert-success fade in">ΕΝΗΜΕΡΩΣΗ ΕΠΙΤΥΧΗΣ'.TXT_MAIL_OK.'<br>'.$MSG.'</div>';
+		$alertMSG .= '<div class="alert alert-success fade in">ΕΝΗΜΕΡΩΣΗ ΕΠΙΤΥΧΗΣ'.'<br>'.$MSG.'</div>';
 	 } 	
 	 
 	 

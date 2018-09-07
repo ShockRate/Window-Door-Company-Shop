@@ -21,14 +21,11 @@ $('.myDetailsBtn').on('click',function(){
      
     var index  = $(this).closest('tr').children()[0].textContent;
 
-    //var imgsrc = $(this).closest('tr').children()[6].getElementsByTagName("img")[0].getAttributeNode("src").value;        
-    //$('#imgDetail').attr('src', imgsrc);
 
     $("#windowIndex").val($(this).closest('tr').children()[0].textContent);
     $("#type").html($(this).closest('tr').children()[2].textContent);
     $("#pieces").val($(this).closest('tr').children()[3].textContent);
     $("#profiles").val($(this).closest('tr').children()[8].textContent);
-    //$("#shutters").val($(this).closest('tr').children()[10].textContent);
     $("#screens").val($(this).closest('tr').children()[9].textContent);
     $("textarea#detailsNotes").val($(this).closest('tr').children()[12].textContent);
       

@@ -44,7 +44,7 @@
  * ============================================================================================
  */
         // set login var
-        $loggedIn=$admin= true;
+        $loggedIn=$admin=FALSE;
 
         // set page title
         $page_title             ="EPAL Shop";
@@ -88,26 +88,26 @@ if (isset($_SESSION['user_id'])) {
         }
     }
 }
-if(isset($newOrder)){
+// if(isset($newOrder)){
 
     
-    $order->setorder($_POST['series'], $_POST['glazzing'], $_POST['color']);
+//     $order->setorder($_POST['series'], $_POST['glazzing'], $_POST['color']);
 
-    $_SESSION['order'] = array(
-            "ID"        => time(),
-            "Series"    => $_POST['series'], 
-            "Glazzing"  => $_POST['glazzing'], 
-            "Color"     => $_POST['color']
+//     $_SESSION['order'] = array(
+//             "ID"        => time(),
+//             "Series"    => $_POST['series'], 
+//             "Glazzing"  => $_POST['glazzing'], 
+//             "Color"     => $_POST['color']
 
-    );
-     echo $_SESSION['order']['ID'];
-     echo $_SESSION['order']['Series'];
-     echo $_SESSION['order']['Glazzing'];
-     echo $_SESSION['order']['Color'];
+//     );
+//      echo $_SESSION['order']['ID'];
+//      echo $_SESSION['order']['Series'];
+//      echo $_SESSION['order']['Glazzing'];
+//      echo $_SESSION['order']['Color'];
 
-    header("Location: index.php"); 
+//     header("Location: index.php"); 
 
-}
+// }
 
 
 if (isset($newItem)) {
@@ -137,7 +137,7 @@ if (isset($newItem)) {
                      "SillRight"    => "2.5",
                      "Pieces"       => "1",
                      "Color"        =>  $_SESSION['order']['Color'],
-                     "Glazzing"     =>  $_SESSION['order']['GLazzing'],
+                     "Glazzing"     =>  $_SESSION['order']['Glazzing'],
                      "Series"       =>  $_SESSION['order']['Series'],
                      "dimCase1"     => " ",
                      "dimCase2"     => " ",
@@ -178,9 +178,9 @@ if (isset($newItem)) {
                 }
          
             } else {
-                //header("Location: test-code/login/index.html"); 
-                include_once 'views/TESTloginForm.php'; 
+                // echo isset($id)?$id:''; 
+                include_once 'registerCtrl.php'; 
             }
-            include_once 'views/footer.php';
+            include_once FOOTER;
   ?> 
  

@@ -1,14 +1,16 @@
-             body {
+             html, body {
                 background-color: #fff;
                 color: #636b6f;
                 font-family:  sans-serif;
                 font-weight: 100;
-                height: 100vh;
+                height: 100%;
                 margin: 0;
                 
+                position: relative; 
+            }
+            .contents{
                 /* position: relative; */
-
-                
+                margin-bottom: -2%;
             }
             div.center {
                  margin-bottom: 100px;
@@ -194,5 +196,8 @@
                 bottom: 2%;
                 left: 5%;
             }
+            .site-footer, .page-wrap:after {
+                height: 2%; 
+              }
             
             

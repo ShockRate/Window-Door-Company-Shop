@@ -3,7 +3,7 @@
    <div class="container" style="text-align: center; margin-left: auto; margin-right: auto; width: 50%">
    <!--  <div class="col-xs-6 col-lg-6" > -->
      
-  <form method="post" action="index.php">
+  <form method="post" action="test-code/test.php">
       <h3> <?php echo $series;?></h3>
       <div class="block">
           <label class="input-label">ΣΕΙΡΑ:</label>

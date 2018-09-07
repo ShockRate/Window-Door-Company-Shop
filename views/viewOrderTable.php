@@ -3,7 +3,7 @@
  $tableBuilder   = new tableBuilder;
 ?>
 
-				<div class="main" class="row">
+				<div class="main">
 				<table id="t01">
 				  <tr>
 				    <th>A/A</th>

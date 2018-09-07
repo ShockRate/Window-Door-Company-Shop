@@ -1,7 +1,7 @@
 <?php
 
 define('BASE_URL', 'http://localhost/test-shop/');
-define('MYSQL', './inc/mysql_connection_linl.php');
+define('MYSQL', './inc/mysql_connection_link.php');
 define('HEADER', './views/header.php');  
 define('FOOTER', './views/footer.php');
 define('ADMIN_EMAIL','s_tottas@epal.gr');
