@@ -61,7 +61,7 @@
                   onchange="HeightConverter()"/>
                   <!-- </div> -->
                 </div> 
-                <p>Width: <span class="hidden" id="outputWidth"></span></p>
+                <p>Width: <span id="outputWidth"></span></p>
                 <p>Height: <span id="outputHeight"></span></p>
               </div> 
             

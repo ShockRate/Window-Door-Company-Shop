@@ -1,29 +1,16 @@
 <?php
-session_start();
+class CreateOrder{
 
-include_once('classes.php');
-
-$newOrder               = $Check->PagePostVars('newOrder');
-
-if(isset($newOrder)){
-    header("Location: index.php");
-    $_SESSION['order'] = array(
+    function newOrder($orderData){
+        $_SESSION['order'] = array(
             "ID"        => time(),
-            "Series"    => $_POST['series'], 
-            "Glazzing"  => $_POST['glazzing'], 
-            "Color"     => $_POST['color']
-
-    );
-     echo $_SESSION['order']['ID'];
-     echo $_SESSION['order']['Series'];
-     echo $_SESSION['order']['Glazzing'];
-     echo $_SESSION['order']['Color'];
-
+            "Series"    => $orderData['series'], 
+            "Glazzing"  => $orderData['glazzing'], 
+            "Color"     => $orderData['color']
     
-    
+        );
+        header('Location:'.BASE_URL.'index.php');
+        exit();
+    }
 
-} else{
-    header("Location: index.php"); 
-
- 
 }

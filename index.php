@@ -160,25 +160,22 @@ if (isset($newItem)) {
             
             include_once HEADER;
             if ($loggedIn) {
+                // if (isset($_SESSION['order']) && !empty($_SESSION['order'])){
+                //     include_once 'views/viewCreateFrame.php';
+                //     include_once 'views/viewDetails.php';
+                //     include_once 'views/viewOrderDetails.php';
+                //     include_once 'views/viewOrderTable.php';
+                //     include_once 'views/viewFrameSill.php';                         
+                // } else {  
+                //     include_once 'views/viewCreateOrder.php'; 
+                // }
                 
-                if (isset($_SESSION['order']) && !empty($_SESSION['order'])){
-            
-             
-                    include_once 'views/viewCreateFrame.php';
-                    include_once 'views/viewDetails.php';
-                    include_once 'views/viewOrderDetails.php';
-                    include_once 'views/viewOrderTable.php';
-                    include_once 'views/viewFrameSill.php';
-                          
-                } else {
-                   
-                    include_once 'views/viewCreateOrder.php'; 
-                   
-        
-                }
-         
+                       
+                    
+                        include_once 'test-code/orderCtrl.php';
+                       
             } else {
-                // echo isset($id)?$id:''; 
+                
                 include_once 'registerCtrl.php'; 
             }
             include_once FOOTER;

@@ -15,11 +15,14 @@
         <div class="navbar-collapse collapse">
             <?php if($loggedIn){ ?>
             <ul class="nav navbar-nav">
+            
                 <!-- highlight if $page_title has 'Products' word. -->
                 <li <?php echo strpos($page_title, "Product")!==false ? "class='active'" : ""; ?>>
                     <a href="products.php">Products</a>
                 </li>
- 
+                <li <?php echo strpos($page_title, "New Customer")!==false ? "class='active'" : ""; ?>>
+                    <a href="newCustomer.php">New Customer</a>
+                </li>
                 <li <?php echo $page_title=="Cart" ? "class='active'" : ""; ?> >
                     <a href="cart.php">
                         <!--later, we'll put a PHP code here that will count items in the cart -->
