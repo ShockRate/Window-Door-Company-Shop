@@ -43,9 +43,9 @@
 				    <td><?php echo $arr['Profile'];?></td>
 				    <td><?php echo $arr['Screens'];?></td>
 					<td>
-						<?php echo $arr['Shutters'];?>
-						<?php echo $arr['Slats'];?>
-						<?php echo $arr['Mechanism'];?>
+					<?php echo $arr['Shutters'].'<br>';?>
+						<?php echo $arr['Slats'].'<br>';?>
+						<?php echo $arr['Mechanism'].'<br>';?>
 					</td>
 				    <td></td>
 				    <td><?php echo $arr['DetailsNotes'];?></td>
